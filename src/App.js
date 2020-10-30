@@ -1,12 +1,11 @@
 import React from 'react';
+import Home from './components/Home';
 import './App.css';
 
-function App() {
-  return (
-    <div>
-      <p>color</p>
-    </div>
-  );
-}
+const App = () => (
+  <div>
+    <Home />
+  </div>
+);
 
 export default App;
