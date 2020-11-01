@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Galley() {
+function Gallery() {
   return (
     <p>Images</p>
   );
 }
 
-export default Galley;
+export default Gallery;
