@@ -1,6 +1,6 @@
 // import React, { useState, useEffect } from 'react';
 // import { NavLink } from 'react-router-dom';
-// import api from '../../services/api';
+// import api from '../API';
 
 // function Display episodes
 // function/ link to return to CharactersList
@@ -9,6 +9,28 @@
     // Use Hook to loading = useState
   
     // useEffect for sync with page of API
+    // useEffect(() => {
+    //     async function loadData() {
+    //       setLoading(true);
+    //       const apiCharacters = await api.get(`/character/?page=${page}`);
+    
+    //       setCharacters(apiCharacters.data.results);
+    //       setLoading(false);
+    //     }
+    
+    //     loadData();
+    //   }, [match.params.page, page]);
+    
+    //   function setDisplayEpisodes(id) {
+    //     setCharacters(
+    //       characters.map(char =>
+    //         char.id === id
+    //           ? { ...char, displayEpisodes: !char.displayEpisodes }
+    //           : char
+    //       )
+    //     );
+    //   }
+
 
       // in return
             //CardDetails

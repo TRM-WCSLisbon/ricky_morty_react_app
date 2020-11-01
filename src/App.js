@@ -1,11 +1,14 @@
 import React from 'react';
 import Home from './components/Home';
-import './App.css';
+import { BrowserRouter as Router } from 'react-router-dom';
+
+import GlobalStyle from './components/globalStyle';
 
 const App = () => (
-  <div>
+  <Router>
     <Home />
-  </div>
+    <GlobalStyle />
+  </Router>
 );
 
 export default App;
