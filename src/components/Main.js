@@ -11,9 +11,9 @@ const Main = () => (
   <main>
     <Switch>
       <Route exact path="/" component={Gallery} />
-      <Route path="/Characters" component={Characters} />
-      <Route path="/Locations" component={Locations} />
-      <Route path="/Episodes" component={Episodes} />
+      <Route path="/characters" component={Characters} />
+      <Route path="/locations" component={Locations} />
+      <Route path="/episodes" component={Episodes} />
     </Switch>
   </main>
 );
