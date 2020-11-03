@@ -24,10 +24,8 @@ export default createGlobalStyle`
     cursor: pointer;
     outline: none !important;
   }
-  body, input, button {
-    font: 12px 'Roboto', sans-serif;
-  }
-  ul {
-    list-style: none;
-  }
-`;
+  `;
+
+// body, input, button {
+//   font: 1em 'Roboto', sans-serif;
+// }
