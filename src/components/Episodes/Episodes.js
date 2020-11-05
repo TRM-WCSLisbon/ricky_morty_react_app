@@ -2,7 +2,9 @@ import React from 'react';
 
 function Episodes() {
   return (
-    <p>Episodes</p>
+    <div>
+       <EpisodeList />
+    </div>
   );
 }
 
