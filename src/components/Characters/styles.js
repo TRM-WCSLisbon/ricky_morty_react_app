@@ -104,13 +104,13 @@ export const Card = styled.li`
     }
   }
   ul {
-    opacity: ${props => (props.displayEpisodes ? 1 : 0)};
+    opacity: ${(props) => (props.displayEpisodes ? 1 : 0)};
     top: 0;
     right: 0;
     height: 82%;
     width: 98%;
     position: absolute;
-    overflow-y: ${props => (props.displayEpisodes ? 'auto' : 'hidden')};
+    overflow-y: ${(props) => (props.displayEpisodes ? 'auto' : 'hidden')};
     transition: opacity 150ms ease-in-out;
 
     &::-webkit-scrollbar {

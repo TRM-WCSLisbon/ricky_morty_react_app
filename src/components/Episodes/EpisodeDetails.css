@@ -1,0 +1,9 @@
+.episode-details {
+  height: 200px;
+  width: 300px;
+  border: 1px solid red;
+  margin: 40px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
