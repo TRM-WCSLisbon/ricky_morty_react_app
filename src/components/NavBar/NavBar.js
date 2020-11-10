@@ -1,21 +1,26 @@
 import React from 'react';
 import { NavLink as Link } from 'react-router-dom';
-import logo from './logo_project2.png';
-import { Nav } from './NavStyle';
+import { Nav, Background } from './styles';
 
 const NavBar = () => (
-  <Nav>
-    <Link exact to="/" select><img src={logo} alt="logo" /></Link>
-    <nav>
-      <ul>
-        <li><Link to="/characters" select>Characters</Link></li>
-        <li><Link to="/locations" select>Locations</Link></li>
-        <li><Link to="/episodes" select>Episodes</Link></li>
-      </ul>
-    </nav>
-  </Nav>
+  <Link exact to="/" select>
+    <Background>
+      <Nav>
+        <ul id="left">
+          <li><Link to="/characters" select>Characters</Link></li>
+          <li><Link to="/locations" select>Locations</Link></li>
+        </ul>
+        <ul>
+          <li><Link to="/episodes" select>Episodes</Link></li>
+          <li><Link to="/contact" select>Contact Us</Link></li>
+        </ul>
+      </Nav>
+    </Background>
+  </Link>
 
 );
+export default NavBar;
+
 // <!-- Mobile Menu -->
 //     <div id="mobile-menu" class="mobile-menu">
 //       <ul class="mobile-links">
@@ -26,4 +31,3 @@ const NavBar = () => (
 //         <li class="nav-list"><a href="#">Contact</a></li>
 //       </ul>
 //     </div>
-export default NavBar;
