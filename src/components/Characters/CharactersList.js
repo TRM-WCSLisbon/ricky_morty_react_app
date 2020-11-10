@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import api from '../API';
+import API from '../API';
 
 // create style file with SCSS and import styles
 import {
@@ -19,30 +19,121 @@ function getPage(direction, actualPage) {
   return nextPage >= 1 ? nextPage : 1;
 }
 // function CharactersList
-// Use Hook to characters = useState
-// Use Hook to loading = useState
-// pass clickablePages on a variable
-// pass page on a variable
 
 // useEffect for sync with page of API
-useEffect(() => {
-  async function loadData() {
-    setLoading(true);
-    const apiCharacters = await api.get(`/character/?page=${page}`);
+export default function CharactersList({ match }) {
+  // Use Hook to characters = useState
+  const [characters, setCharacters] = useState([]);
+  // Use Hook to loading = useState
+  const [loading, setLoading] = useState(false);
+  // pass clickablePages on a variable
+  const clickablePages = getClickablePages(Number(match.params.page) || 1);
+  // pass page on a variable
+  const page = Number(match.params.page) || 1;
 
-    setCharacters(apiCharacters.data.results);
-    setLoading(false);
-  }
+  useEffect(() => {
+    async function loadData() {
+      setLoading(true);
+      const apiCharacters = await API.get(`/character/?page=${page}`);
 
-  loadData();
-}, [match.params.page, page]);
+      setCharacters(apiCharacters.data.results);
+      setLoading(false);
+    }
 
-// in return
-// CardGrid
-// Card
-// img
-// id & name
-// species & status(add some signal like a circle green or something)
+    loadData();
+  }, [match.params.page, page]);
 
-// Footer
-// NavLinks for prev, pag and next (limit number of pages to 34)
+  // function setDisplayEpisodes(id) {
+  //   setCharacters(
+  //     characters.map((char) => (char.id === id
+  //       ? { ...char, displayEpisodes: !char.displayEpisodes }
+  //       : char)),
+  //   );
+  // }
+
+  return (
+    <>
+      <Header>
+        <header>
+          <h1>
+            Characters
+          </h1>
+        </header>
+      </Header>
+      <CardGrid loading={loading}>
+        {loading ? (
+          <Spinner />
+        ) : (
+          characters.map((char) => (
+            <Card
+              key={char.id}
+              // onClick={() => setDisplayEpisodes(char.id)}
+              // displayEpisodes={char.displayEpisodes}
+            >
+              <img src={char.image} alt={char.name} />
+              <section>
+                <header>
+                  <h1>
+                    <span>{char.id}</span>
+                    {' '}
+                    {char.name}
+                  </h1>
+                  <h3>
+                    {char.species}
+                    {' '}
+                    -
+                    {char.status}
+                  </h3>
+                </header>
+              </section>
+              <ul>
+                <p>Episodes:</p>
+                {char.episode
+                  .map((epi) => epi.split('/episode/')[1])
+                  .map((epi) => (
+                    <li key={char.id + epi}>{epi}</li>
+                  ))}
+              </ul>
+            </Card>
+          ))
+        )}
+      </CardGrid>
+      <Header>
+
+        <ul>
+          <NavLink to={`/${getPage(-1, page)}`}>
+            <li> prev </li>
+          </NavLink>
+
+          {clickablePages.map((pageNumber) => {
+            if (pageNumber <= 34) {
+              return (
+                <NavLink to={`/${pageNumber}`} key={pageNumber}>
+                  <PageNumber actualPage={pageNumber === page}>
+                    {pageNumber}
+                  </PageNumber>
+                </NavLink>
+              );
+            }
+            // else if(pageNumber === 34){
+            //   return(
+            //     <NavLink to={`/${pageNumber}`} key={pageNumber}>
+            //       <PageNumber actualPage={pageNumber}>
+            //         {pageNumber}
+            //       </PageNumber>
+            //     </NavLink>
+            //   )}
+          })}
+          {
+          page <= 33 && (
+            <NavLink to={`/${getPage(1, page)}`}>
+              <li> next </li>
+            </NavLink>
+          )
+}
+
+        </ul>
+      </Header>
+    </>
+  );
+}
