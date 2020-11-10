@@ -1,9 +1,9 @@
-import React from 'react';
-import EpisodeList from './EpisodesList';
+import React from "react";
+import EpisodeList from "./EpisodesList";
 
 function Episodes() {
   return (
-    <div>
+    <div className="episode-card">
       <EpisodeList />
     </div>
   );

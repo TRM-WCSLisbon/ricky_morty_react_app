@@ -1,9 +1,10 @@
-import React from 'react';
-import axios from 'axios';
-import EpisodeDetails from './EpisodesDetails';
+import React from "react";
+import axios from "axios";
+import EpisodeDetails from "./EpisodesDetails";
+import SingleEpisodeDetail from "./SingleEpisodeDetail";
 
 class EpisodeList extends React.Component {
-// stores all the changes}
+  // stores all the changes}
   state = {
     episodes: [],
   };
@@ -16,7 +17,7 @@ class EpisodeList extends React.Component {
   //   gets data from API
   getEpisodes = () => {
     axios
-      .get('https://rickandmortyapi.com/api/episode/')
+      .get("https://rickandmortyapi.com/api/episode/")
       .then((response) => this.setState({ episodes: response.data.results }));
   };
 
