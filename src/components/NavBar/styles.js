@@ -132,3 +132,14 @@ export const Background = styled.div`
       }
     }
 `;
+
+// export const Mobile = styled.div`
+//     {
+//         max-width: 480px;
+//         margin: auto;
+//         background-color: #555;
+//         height: 500px;
+//         color: white;
+//         border-radius: 10px;
+//     }
+// `;

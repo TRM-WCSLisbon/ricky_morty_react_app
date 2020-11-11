@@ -10,6 +10,12 @@ function Gallery() {
   return (
     <div>
       <Header>
+        <h1>
+          <p>Rick </p>
+          {' '}
+          &
+          <p>Morty</p>
+        </h1>
         <span>
           After going missing for nearly 20 years, Rick Sanchez suddenly arrives
           at his daughter Beth’s doorstep looking to move in with her and her

@@ -31,6 +31,22 @@ export const Header = styled.div`
     padding: 30px;
     box-shadow: 20px 20px 25px #000;
   }
+  h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    -webkit-text-stroke: 1px #f5f5f5;
+
+    @media only screen and (max-width: 600px) {
+      text-align: center;
+      font-size: 2.5em;
+    }
+
+    p {
+      color: #21d8ff;
+    }
   
   @media only screen and (max-width: 795px) {
     span{

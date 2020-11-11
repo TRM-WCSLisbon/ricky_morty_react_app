@@ -1,9 +1,19 @@
 import React from 'react';
 import { NavLink as Link } from 'react-router-dom';
-import { Nav, Background } from './styles';
+import { Nav, Background, Mobile } from './styles';
+
+// myFunction = (Nav) => {
+//   const nav = Nav;
+//   if (nav.style.display === 'block') {
+//     nav.style.display = 'none';
+//   } else {
+//     nav.style.display = 'block';
+//   }
+// };
 
 const NavBar = () => (
   <Link exact to="/" select>
+    {/* <Mobile> */}
     <Background>
       <Nav>
         <ul id="left">
@@ -13,9 +23,13 @@ const NavBar = () => (
         <ul>
           <li><Link to="/episodes" select>Episodes</Link></li>
           <li><Link to="/contact" select>Contact Us</Link></li>
+          {/* <li onClick={myFunction()}>
+              <i className="fa fa-bars" />
+            </li> */}
         </ul>
       </Nav>
     </Background>
+    {/* </Mobile> */}
   </Link>
 
 );
