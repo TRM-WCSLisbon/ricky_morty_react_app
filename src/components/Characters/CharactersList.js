@@ -72,25 +72,35 @@ export default function CharactersList({ match }) {
               // displayEpisodes={char.displayEpisodes}
             >
               <div className="card">
-                <section>
+                <div className="card-inner">
                   <div className="card-front">
                     <img src={char.image} alt={char.name} />
                   </div>
-                  <header>
-                    <h1>
-                      <span>{char.id}</span>
-                      {' '}
-                      {char.name}
-                    </h1>
-                    <h3>
-                      {char.species}
-                      {' '}
-                      -
-                      {char.status}
-                    </h3>
-                  </header>
-                </section>
+                  <div className="card-back">
+                    <ul>
+                      <li>
+                        <span>{char.id}</span>
+                      </li>
+                      <li>
+                        <strong>Name:</strong>
+                        {' '}
+                        {char.name}
+                      </li>
+                      <li>
+                        <strong>Species:</strong>
+                        {' '}
+                        {char.species}
+                      </li>
+                      <li>
+                        <strong>Status:</strong>
+                        {' '}
+                        {char.status}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
+
               {/* <ul>
                 <p>Episodes:</p>
                 {char.episode

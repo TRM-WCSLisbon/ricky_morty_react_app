@@ -18,11 +18,11 @@ const Ul = styled.ul`
     margin-right:20px;
     margin-left:0px;
   }
-  .left{
-      float: left;
-      margin-left:50px;
-      margin-right:0;
-  }
+  // .left{
+  //     float: left;
+  //     margin-left:50px;
+  //     margin-right:0;
+  // }
   li{
       justify-content: center;
       margin-top: 20px;
@@ -71,17 +71,22 @@ const Ul = styled.ul`
     flex-flow: column nowrap;
     background-color: #31445E;
     opacity: 0.89;
-    position: absolute;
+    position: fixed;
+    transform: ${({ open }) => (open ? 'opacity(1)' : 'opacity(0)')};
+    transform: ${({ open }) => (open ? 'position(fixed)' : 'position(absolute)')};
     transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
     top: 0;
     right: 0;
     height: 35vh;
-    width: 250px;
+    width: 20vw;
+    // width: 100%;
     padding-top: -0.8rem;
     transition: transform 0.3s ease-in-out;
 
     li {
       color: #fff;
+      padding-bottom: 20px;
+      position: relative;
     }
   }
 
@@ -106,7 +111,7 @@ const Ul = styled.ul`
 
 const RightNav = ({ open }) => (
   <Ul open={open}>
-    <ul className="left">
+    <ul>
       <li>
         <Link to="/characters/" select>
           Characters

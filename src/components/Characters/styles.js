@@ -61,6 +61,58 @@ export const Header = styled.div`
   }
 `;
 export const Card = styled.div`
+.card {
+  cursor: pointer;
+  background-color: transparent;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.card h1 {
+  font-size: 25px;
+  border-bottom: 1px #fff solid;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  transform: rotateY(180deg);
+}
+
+.card li {
+  list-style: none;
+  padding-bottom: 10px;
+}
   color: #fff;
   background: #7d12ff;
   margin: 10px;
@@ -105,12 +157,12 @@ export const Card = styled.div`
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
       padding: 5px 0 10px 10px;
-      
+
       header{
         background-color: #333;
-  color: white;
-  padding: 20px;
-  transform: rotateY(180deg);
+        color: white;
+        padding: 20px;
+        transform: rotateY(180deg);
       }
       h1 {
         span {
@@ -167,7 +219,7 @@ export const Card = styled.div`
 
 export const CardGrid = styled.ul`
   display: ${({ loading }) => (loading ? 'block' : 'grid')};
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 15px;
 `;
 
