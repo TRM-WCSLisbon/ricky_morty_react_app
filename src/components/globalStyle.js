@@ -26,6 +26,9 @@ export default createGlobalStyle`
     cursor: pointer;
     outline: none !important;
   }
+  ul {
+    list-style: none;
+  }
   `;
 
 // body, input, button {

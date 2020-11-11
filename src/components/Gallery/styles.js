@@ -11,7 +11,7 @@ export const Header = styled.div`
 
   display: flex;
   flex-direction: column;
-  padding: 50px 50px 30px;
+  padding: 30px 30px;
   -webkit-text-stroke-width: 0.5px;
   -webkit-text-stroke-color: #1B561A;
   color: #000;
@@ -31,31 +31,7 @@ export const Header = styled.div`
     padding: 30px;
     box-shadow: 20px 20px 25px #000;
   }
-  ul {
-    display: flex;
-    font-size: 1.5em;
-    margin-top: 5px;
-
-    a {
-      text-decoration: none;
-      :first-child,
-      :last-child {
-        color: inherit;
-      }
-
-      li {
-        padding: 0 10px;
-        cursor: pointer;
-        transition: color 100ms ease-in-out;
-
-        :hover {
-          @media only screen and (min-width: 600px) {
-            color: #21d8ff;
-          }
-        }
-      }
-    }
-  }
+  
   @media only screen and (max-width: 795px) {
     span{
         font-size: 0.8em;
@@ -96,7 +72,7 @@ export const CardGrid = styled.ul`
   display: ${({ loading }) => (loading ? "block" : "grid")};
   grid-template-columns: repeat(auto-fit, 300px);
   grid-gap: 30px;
-  margin: 20px;
+  margin: 30px;
   align-items: center;
   justify-content: center;
 

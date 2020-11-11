@@ -53,23 +53,33 @@ export const Nav = styled.nav`
     }
     @media only screen and (max-width: 795px) {
         li{
-            font-size: 0.8em;
+            font-size: 0.9em;
             display: flex;
             position: relative;
             padding: 20px;
             margin-left: auto;
             margin-right: auto;
-            margin-top: 50px;
+            margin-top: 90px;
+        };
+      }
+    }
+    @media only screen and (max-width: 701px) {
+        li{
+            font-size: 0.8em;
+            padding: 10px;
+            margin-top: 90px;
+            margin-left: auto;
+            margin-right: 20px;
         };
       }
     }
     @media only screen and (max-width: 647px) {
         li{
-            font-size: 0.8em;
             display: flex;
-            position: relative;
-            padding: 20px;
-            margin-top: 0px;
+            flex-direction: wrap;
+            font-size: 0.8em;
+            padding: 5px;
+            margin-top: 80px;
             margin-left: auto;
             margin-right: auto;
         };
@@ -81,7 +91,7 @@ export const Nav = styled.nav`
             display: flex;
             position: relative;
             padding: 10px;
-            margin-top: 0px;
+            margin-top: 20px;
             margin-left: auto;
             margin-right: auto;
         };
@@ -98,21 +108,19 @@ export const Background = styled.div`
     background-size: 100% cover; 
     margin:0;
     width: 100%;
-    height: 40vh;
+    height: 30vh;
     content:100%;
     color: #fff;
     }
     @media only screen and (max-width: 795px) {
         {
             width: 100%;
-            height: 30vh;
         };
       }
     }
     @media only screen and (max-width: 647px) {
         {
             width: 100%;
-            height: 30vh;  
         };
       }
     }

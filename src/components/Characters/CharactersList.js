@@ -12,15 +12,15 @@ function getClickablePages(actualPage) {
   const offsets = [0, 1, 2, 3, 4];
   return offsets.map((number) => parseInt(actualPage, 10) + number);
 }
+
 // function getPage to get nextPage
 function getPage(direction, actualPage) {
   const nextPage = parseInt(actualPage, 10) + direction;
 
   return nextPage >= 1 ? nextPage : 1;
 }
-// function CharactersList
 
-// useEffect for sync with page of API
+// function CharactersList
 export default function CharactersList({ match }) {
   // Use Hook to characters = useState
   const [characters, setCharacters] = useState([]);
@@ -31,6 +31,7 @@ export default function CharactersList({ match }) {
   // pass page on a variable
   const page = Number(match.params.page) || 1;
 
+  // useEffect for sync with page of API
   useEffect(() => {
     async function loadData() {
       setLoading(true);
@@ -86,29 +87,28 @@ export default function CharactersList({ match }) {
                   </h3>
                 </header>
               </section>
-              <ul>
+              {/* <ul>
                 <p>Episodes:</p>
                 {char.episode
                   .map((epi) => epi.split('/episode/')[1])
                   .map((epi) => (
                     <li key={char.id + epi}>{epi}</li>
                   ))}
-              </ul>
+              </ul> */}
             </Card>
           ))
         )}
       </CardGrid>
       <Header>
-
         <ul>
-          <NavLink to={`/${getPage(-1, page)}`}>
-            <li> prev </li>
+          <NavLink to={`/characters/${getPage(-1, page)}`}>
+            <li> Prev </li>
           </NavLink>
 
           {clickablePages.map((pageNumber) => {
             if (pageNumber <= 34) {
               return (
-                <NavLink to={`/${pageNumber}`} key={pageNumber}>
+                <NavLink to={`/characters/${pageNumber}`} key={pageNumber}>
                   <PageNumber actualPage={pageNumber === page}>
                     {pageNumber}
                   </PageNumber>
@@ -124,14 +124,11 @@ export default function CharactersList({ match }) {
             //     </NavLink>
             //   )}
           })}
-          {
-          page <= 33 && (
-            <NavLink to={`/${getPage(1, page)}`}>
-              <li> next </li>
+          {page <= 33 && (
+            <NavLink to={`/characters/${getPage(1, page)}`}>
+              <li> Next </li>
             </NavLink>
-          )
-}
-
+          )}
         </ul>
       </Header>
     </>

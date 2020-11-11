@@ -7,7 +7,7 @@ const NavBar = () => (
     <Background>
       <Nav>
         <ul id="left">
-          <li><Link to="/characters" select>Characters</Link></li>
+          <li><Link to="/characters/" select>Characters</Link></li>
           <li><Link to="/locations" select>Locations</Link></li>
         </ul>
         <ul>
