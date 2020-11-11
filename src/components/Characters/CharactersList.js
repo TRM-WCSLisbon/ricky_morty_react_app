@@ -71,22 +71,26 @@ export default function CharactersList({ match }) {
               // onClick={() => setDisplayEpisodes(char.id)}
               // displayEpisodes={char.displayEpisodes}
             >
-              <img src={char.image} alt={char.name} />
-              <section>
-                <header>
-                  <h1>
-                    <span>{char.id}</span>
-                    {' '}
-                    {char.name}
-                  </h1>
-                  <h3>
-                    {char.species}
-                    {' '}
-                    -
-                    {char.status}
-                  </h3>
-                </header>
-              </section>
+              <div className="card">
+                <section>
+                  <div className="card-front">
+                    <img src={char.image} alt={char.name} />
+                  </div>
+                  <header>
+                    <h1>
+                      <span>{char.id}</span>
+                      {' '}
+                      {char.name}
+                    </h1>
+                    <h3>
+                      {char.species}
+                      {' '}
+                      -
+                      {char.status}
+                    </h3>
+                  </header>
+                </section>
+              </div>
               {/* <ul>
                 <p>Episodes:</p>
                 {char.episode

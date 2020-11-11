@@ -60,7 +60,7 @@ export const Header = styled.div`
     }
   }
 `;
-export const Card = styled.li`
+export const Card = styled.div`
   color: #fff;
   background: #7d12ff;
   margin: 10px;
@@ -68,27 +68,50 @@ export const Card = styled.li`
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   cursor: pointer;
-  position: relative;
-
+  background-color: transparent;
+  height: 308px;
+  perspective: 1000px;
+  
   backdrop-filter: blur(5px);
   border: 4px solid #ab20fd;
   box-shadow: 0 10px 25px #ab20fd;
 
-  :hover {
-    @media only screen and (min-width: 600px) {
-      transform: scale(1.05);
-    }
+  // :hover {
+  //   @media only screen and (min-width: 600px) {
+  //     transform: scale(1.05);
+  //   }
+  // }
+  :hover section {
+    transform: rotateY(180deg);
   }
-
   img {
-    width: 100%;
-    border-radius: 10px 10px 0 0;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 7px;
   }
 
   section {
-    header {
-      padding: 5px 0 10px 10px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
 
+    .card-front, header {
+      position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+      padding: 5px 0 10px 10px;
+      
+      header{
+        background-color: #333;
+  color: white;
+  padding: 20px;
+  transform: rotateY(180deg);
+      }
       h1 {
         span {
           background: rgba(33, 216, 255, 0.8);
@@ -104,19 +127,19 @@ export const Card = styled.li`
       }
     }
   }
-  ul {
-    opacity: ${(props) => (props.displayEpisodes ? 1 : 0)};
-    top: 0;
-    right: 0;
-    height: 82%;
-    width: 98%;
-    position: absolute;
-    overflow-y: ${(props) => (props.displayEpisodes ? 'auto' : 'hidden')};
-    transition: opacity 150ms ease-in-out;
+  // ul {
+  //   opacity: ${(props) => (props.displayEpisodes ? 1 : 0)};
+  //   top: 0;
+  //   right: 0;
+  //   height: 82%;
+  //   width: 98%;
+  //   position: absolute;
+  //   overflow-y: ${(props) => (props.displayEpisodes ? 'auto' : 'hidden')};
+  //   transition: opacity 150ms ease-in-out;
 
-    &::-webkit-scrollbar {
-      display: none;
-    }
+  //   &::-webkit-scrollbar {
+  //     display: none;
+  //   }
 
     p {
       background: #7159c1;

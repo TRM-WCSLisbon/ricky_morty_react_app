@@ -12,19 +12,17 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
 
-  .logo {
-    padding: 15px 0;
-  }
 `;
 
 const Navbar = () => (
-  <Link exact to="/" select>
-    <Background>
-      <Nav>
-        <Burger />
-      </Nav>
-    </Background>
-  </Link>
+  <div>
+    <Link exact to="/" select>
+      <Background />
+    </Link>
+    <Nav>
+      <Burger />
+    </Nav>
+  </div>
 );
 
 export default Navbar;

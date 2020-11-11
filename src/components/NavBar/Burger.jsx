@@ -5,11 +5,11 @@ import RightNav from './RightNav';
 const StyledBurger = styled.div`
   width: 2rem;
   height: 2rem;
-  position: fixed;
+  position: absolute;
   top: 15px;
   right: 20px;
   z-index: 20;
-  display: none;
+  display: block;
 
   //@media (max-width: 768px) 
   {

@@ -71,7 +71,7 @@ const Ul = styled.ul`
     flex-flow: column nowrap;
     background-color: #31445E;
     opacity: 0.89;
-    position: fixed;
+    position: absolute;
     transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
     top: 0;
     right: 0;

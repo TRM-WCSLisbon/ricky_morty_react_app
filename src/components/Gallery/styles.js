@@ -94,6 +94,7 @@ export const CardGrid = styled.ul`
   margin: 30px;
   align-items: center;
   justify-content: center;
+  a { color: inherit; } ;
 
   @media only screen and (max-width: 590px) {
     {
@@ -105,6 +106,7 @@ export const CardGrid = styled.ul`
 }
   #container {
     position: relative;
+    
   }
   img {
     width: 100%;

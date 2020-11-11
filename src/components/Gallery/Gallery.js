@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
+import { NavLink as Link } from 'react-router-dom';
 import char from './char.gif';
 import loc from './loc.gif';
 import epi from './epi.gif';
@@ -28,30 +29,38 @@ function Gallery() {
         </span>
       </Header>
       <CardGrid>
-        <div id="container">
-          <img src={char} alt="characters" />
-          <div id="middle">
-            <p>Characters</p>
+        <Link to="/characters/" select>
+          <div id="container">
+            <img src={char} alt="characters" />
+            <div id="middle">
+              <p>Characters</p>
+            </div>
           </div>
-        </div>
-        <div id="container">
-          <img src={loc} alt="locations" />
-          <div id="middle">
-            <p>Locations</p>
+        </Link>
+        <Link to="/locations" select>
+          <div id="container">
+            <img src={loc} alt="locations" />
+            <div id="middle">
+              <p>Locations</p>
+            </div>
           </div>
-        </div>
-        <div id="container">
-          <img src={epi} alt="episodes" />
-          <div id="middle">
-            <p id="back">Episodes</p>
+        </Link>
+        <Link to="/episodes" select>
+          <div id="container">
+            <img src={epi} alt="episodes" />
+            <div id="middle">
+              <p id="back">Episodes</p>
+            </div>
           </div>
-        </div>
-        <div id="container">
-          <img src={cont} alt="contact" />
-          <div id="middle">
-            <p id="back">Contact Us</p>
+        </Link>
+        <Link to="/contact" select>
+          <div id="container">
+            <img src={cont} alt="contact" />
+            <div id="middle">
+              <p id="back">Contact Us</p>
+            </div>
           </div>
-        </div>
+        </Link>
       </CardGrid>
     </div>
   );
