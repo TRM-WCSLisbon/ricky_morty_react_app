@@ -32,21 +32,25 @@ export const Header = styled.div`
     box-shadow: 20px 20px 25px #000;
   }
   h1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    font: 4em "get_schwifty";
+    display: ${({ loading }) => (loading ? "block" : "grid")};
+    grid-template-columns: repeat(auto-fit, 100px);
+    grid-gap: 50px;
+    margin: 20px 30px 30px 30px;
     align-items: center;
-    font-size: 4em;
+    justify-content: center;
     -webkit-text-stroke: 1px #f5f5f5;
-
-    @media only screen and (max-width: 600px) {
-      text-align: center;
-      font-size: 2.5em;
-    }
-
+    
     p {
       color: #21d8ff;
     }
+    
+    @media only screen and (max-width: 768px) {
+      text-align: center;
+      grid-gap: 10px;
+      font-size: 2.8em;
+    }
+
   
   @media only screen and (max-width: 795px) {
     span{
@@ -86,7 +90,7 @@ export const CardGrid = styled.ul`
   font: 3em "get_schwifty";
   color: #E97299;
   display: ${({ loading }) => (loading ? "block" : "grid")};
-  grid-template-columns: repeat(auto-fit, 300px);
+  grid-template-columns: repeat(auto-fit, 250px);
   grid-gap: 30px;
   margin: 30px;
   align-items: center;

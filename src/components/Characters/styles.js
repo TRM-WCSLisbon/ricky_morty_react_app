@@ -1,7 +1,11 @@
 import styled, { keyframes } from 'styled-components';
+import HeaderFont from '../get_schwifty.ttf';
 
 export const Header = styled.div`
-  font: 18px 'Orbitron', sans-serif;
+@font-face {
+  font-family: "get_schwifty";
+  src: local("get_schwifty"), url(${HeaderFont}) format("truetype");
+}
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,16 +22,13 @@ export const Header = styled.div`
     }
 
     h1 {
-      font-size: 4em;
+      font: 5em "get_schwifty";
       -webkit-text-stroke: 1px #f5f5f5;
+      color: #21d8ff;
 
       @media only screen and (max-width: 600px) {
         text-align: center;
         font-size: 2.5em;
-      }
-
-      span {
-        color: #21d8ff;
       }
     }
   }
@@ -104,13 +105,13 @@ export const Card = styled.li`
     }
   }
   ul {
-    opacity: ${props => (props.displayEpisodes ? 1 : 0)};
+    opacity: ${(props) => (props.displayEpisodes ? 1 : 0)};
     top: 0;
     right: 0;
     height: 82%;
     width: 98%;
     position: absolute;
-    overflow-y: ${props => (props.displayEpisodes ? 'auto' : 'hidden')};
+    overflow-y: ${(props) => (props.displayEpisodes ? 'auto' : 'hidden')};
     transition: opacity 150ms ease-in-out;
 
     &::-webkit-scrollbar {

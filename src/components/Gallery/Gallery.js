@@ -12,8 +12,7 @@ function Gallery() {
       <Header>
         <h1>
           <p>Rick </p>
-          {' '}
-          &
+          and
           <p>Morty</p>
         </h1>
         <span>

@@ -1,9 +1,14 @@
 import styled from 'styled-components';
 import bg from './tenor.gif';
+import HeaderFont from '../get_schwifty.ttf';
 
 export const Nav = styled.nav`
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-    font: 20px 'Roboto', sans-serif;
+@font-face {
+    font-family: "get_schwifty";
+    src: local("get_schwifty"), url(${HeaderFont}) format("truetype");
+  }
+    font: 1.8em 'get_schwifty';
 
     img{
         position:absolute;
@@ -26,16 +31,12 @@ export const Nav = styled.nav`
     }
     li{
         justify-content: center;
-        margin-top: 100px;
+        margin-top: 80px;
         margin-right: 50px;
-        font:'Roboto', sans-serif;
-        font-size:1.3em;
         list-style: none;
     }
     li a {
         color:#000;
-        font-size:1.5em;
-        font-weight: bold;
         text-decoration: none;
         -webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: #fff;
@@ -43,6 +44,7 @@ export const Nav = styled.nav`
      }
      li a:hover { 
         background: #333642;
+        border-radius:20px;
         box-shadow: 6px 5px 11px rgba(51,54,66,.9);
     } 
     @media only screen and (max-width: 960px) {
@@ -59,7 +61,7 @@ export const Nav = styled.nav`
             padding: 20px;
             margin-left: auto;
             margin-right: auto;
-            margin-top: 90px;
+            margin-top: 60px;
         };
       }
     }
@@ -67,7 +69,7 @@ export const Nav = styled.nav`
         li{
             font-size: 0.8em;
             padding: 10px;
-            margin-top: 90px;
+            margin-top: 60px;
             margin-left: auto;
             margin-right: 20px;
         };
@@ -77,7 +79,6 @@ export const Nav = styled.nav`
         li{
             display: flex;
             flex-direction: wrap;
-            font-size: 0.8em;
             padding: 5px;
             margin-top: 80px;
             margin-left: auto;
@@ -85,18 +86,18 @@ export const Nav = styled.nav`
         };
       }
     }
-    @media only screen and (max-width: 450px) {
-        li{
-            font-size: 0.8em;
-            display: flex;
-            position: relative;
-            padding: 10px;
-            margin-top: 20px;
-            margin-left: auto;
-            margin-right: auto;
-        };
-      }
-    }
+    // @media only screen and (max-width: 495px) {
+    //     li{
+    //         font-size: 0.7em;
+    //         display: flex;
+    //         position: relative;
+    //         padding: 10px;
+    //         margin-top: 70px;
+    //         margin-left: auto;
+    //         margin-right: auto;
+    //     };
+    //   }
+    // }
     
     
 `;
@@ -132,14 +133,3 @@ export const Background = styled.div`
       }
     }
 `;
-
-// export const Mobile = styled.div`
-//     {
-//         max-width: 480px;
-//         margin: auto;
-//         background-color: #555;
-//         height: 500px;
-//         color: white;
-//         border-radius: 10px;
-//     }
-// `;
