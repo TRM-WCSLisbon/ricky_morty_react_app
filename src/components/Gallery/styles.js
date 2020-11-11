@@ -53,8 +53,7 @@ export const Header = styled.div`
 
   
   @media only screen and (max-width: 795px) {
-    span{
-        font-size: 0.8em;
+    {
         width: 100%;
         display: flex;
         position: relative;
@@ -96,6 +95,14 @@ export const CardGrid = styled.ul`
   align-items: center;
   justify-content: center;
 
+  @media only screen and (max-width: 590px) {
+    {
+    grid-template-columns: repeat(auto-fit, 200px);
+    margin: 30px 0;
+        
+    };
+  }
+}
   #container {
     position: relative;
   }
