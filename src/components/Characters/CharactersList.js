@@ -20,6 +20,10 @@ function getPage(direction, actualPage) {
   return nextPage >= 1 ? nextPage : 1;
 }
 
+// function getStatus(actualStatus) {
+//   return console.log(statusChar);
+// }
+
 // function CharactersList
 export default function CharactersList({ match }) {
   // Use Hook to characters = useState
@@ -30,6 +34,8 @@ export default function CharactersList({ match }) {
   const clickablePages = getClickablePages(Number(match.params.page) || 1);
   // pass page on a variable
   const page = Number(match.params.page) || 1;
+  // pass status to get correct color
+  // const statusChar = getStatus(match.params.status);
 
   // useEffect for sync with page of API
   useEffect(() => {
@@ -39,6 +45,7 @@ export default function CharactersList({ match }) {
 
       setCharacters(apiCharacters.data.results);
       setLoading(false);
+      console.log(apiCharacters);
     }
 
     loadData();
@@ -82,19 +89,23 @@ export default function CharactersList({ match }) {
                         <span>{char.id}</span>
                       </li>
                       <li>
-                        <strong>Name:</strong>
+                        <h3>Name:</h3>
                         {' '}
-                        {char.name}
+                        <span>{char.name}</span>
                       </li>
                       <li>
-                        <strong>Species:</strong>
+                        <h3>Species:</h3>
                         {' '}
-                        {char.species}
+                        <span>{char.species}</span>
                       </li>
                       <li>
-                        <strong>Status:</strong>
+                        <h3>Status:</h3>
                         {' '}
-                        {char.status}
+                        <span>
+                          {/* className={this.state.status ? 'status-alive' : 'status-dead'}
+                        {char.status.filter((status) =>)statusChar.map() */}
+                          {char.status}
+                        </span>
                       </li>
                     </ul>
                   </div>

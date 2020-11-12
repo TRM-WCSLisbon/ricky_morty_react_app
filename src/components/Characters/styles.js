@@ -1,11 +1,11 @@
-import styled, { keyframes } from 'styled-components';
-import HeaderFont from '../get_schwifty.ttf';
+import styled, { keyframes } from "styled-components";
+import HeaderFont from "../get_schwifty.ttf";
 
 export const Header = styled.div`
-@font-face {
-  font-family: "get_schwifty";
-  src: local("get_schwifty"), url(${HeaderFont}) format("truetype");
-}
+  @font-face {
+    font-family: "get_schwifty";
+    src: local("get_schwifty"), url(${HeaderFont}) format("truetype");
+  }
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,58 +61,7 @@ export const Header = styled.div`
   }
 `;
 export const Card = styled.div`
-.card {
-  cursor: pointer;
-  background-color: transparent;
-  height: 300px;
-  perspective: 1000px;
-}
 
-.card h1 {
-  font-size: 25px;
-  border-bottom: 1px #fff solid;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-}
-
-.card img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-}
-
-.card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-.card:hover .card-inner {
-  transform: rotateY(180deg);
-}
-
-.card-front,
-.card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.card-back {
-  background-color: #333;
-  color: white;
-  padding: 20px;
-  transform: rotateY(180deg);
-}
-
-.card li {
-  list-style: none;
-  padding-bottom: 10px;
-}
   color: #fff;
   background: #7d12ff;
   margin: 10px;
@@ -128,14 +77,6 @@ export const Card = styled.div`
   border: 4px solid #ab20fd;
   box-shadow: 0 10px 25px #ab20fd;
 
-  // :hover {
-  //   @media only screen and (min-width: 600px) {
-  //     transform: scale(1.05);
-  //   }
-  // }
-  :hover section {
-    transform: rotateY(180deg);
-  }
   img {
     width: 300px;
     height: 300px;
@@ -143,42 +84,6 @@ export const Card = styled.div`
     border-radius: 7px;
   }
 
-  section {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-
-    .card-front, header {
-      position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-      padding: 5px 0 10px 10px;
-
-      header{
-        background-color: #333;
-        color: white;
-        padding: 20px;
-        transform: rotateY(180deg);
-      }
-      h1 {
-        span {
-          background: rgba(33, 216, 255, 0.8);
-          color: #fff;
-          border-radius: 3px;
-          padding: 0 6px;
-        }
-      }
-
-      h3 {
-        color: #fff;
-        margin-top: 5px;
-      }
-    }
-  }
   // ul {
   //   opacity: ${(props) => (props.displayEpisodes ? 1 : 0)};
   //   top: 0;
@@ -186,45 +91,105 @@ export const Card = styled.div`
   //   height: 82%;
   //   width: 98%;
   //   position: absolute;
-  //   overflow-y: ${(props) => (props.displayEpisodes ? 'auto' : 'hidden')};
+  //   overflow-y: ${(props) => (props.displayEpisodes ? "auto" : "hidden")};
   //   transition: opacity 150ms ease-in-out;
 
   //   &::-webkit-scrollbar {
   //     display: none;
   //   }
-
-    p {
-      background: #7159c1;
-      font-weight: bold;
-      border-radius: 5px;
-      padding: 5px;
-      margin: 5px 2px 5px 2px;
-      width: 30%;
-      text-align: center;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    }
+  //}
 
     li {
-      background: #7159c1;
       font-weight: bold;
-      width: 9%;
-      border-radius: 50%;
+      width: 100%;
+      border-radius: 20%;
       margin: 2px;
       padding: 5px;
       text-align: center;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      box-shadow: 0 1px 3px rgba(47,53,49, 0.12), 0 1px 2px rgba(47, 53, 49, 0.24);
     }
+  .card {
+    cursor: pointer;
+    background-color: transparent;
+    height: 300px;
+    perspective: 1000px;
+  }
+  
+  .card h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  .card span {
+    font-size: 1.2em;
+    font-weight: bold;
+    border-bottom: 1px #fff solid;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  .card .shadow-alive{
+    padding: 1em;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 3px 2px 2px #aed581;
+  }
+
+  .card .shadow-dead{
+    padding: 1em;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 3px 2px 2px #d58181;
+  }
+  .card img {
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .card-back {
+    background-color: #333;
+    border-radius: 7px;
+    color: white;
+    padding: 20px;
+    transform: rotateY(180deg);
+  }
+  
+  .card li {
+    list-style: none;
+    padding-bottom: 10px;
   }
 `;
 
 export const CardGrid = styled.ul`
-  display: ${({ loading }) => (loading ? 'block' : 'grid')};
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 15px;
+  display: ${({ loading }) => (loading ? "block" : "grid")};
+  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+  margin: 0 60px;
+  grid-gap: 25px;
 `;
 
 export const PageNumber = styled.li`
-  color: ${({ actualPage }) => (actualPage ? '#21d8ff' : '#000')};
+  color: ${({ actualPage }) => (actualPage ? "#21d8ff" : "#000")};
 `;
 
 const spinnerAnimation = keyframes`
@@ -247,7 +212,7 @@ export const Spinner = styled.div`
     border: solid 3px #7159c1;
     border-bottom-color: #21d8ff;
     border-radius: 50%;
-    content: '';
+    content: "";
     height: 40px;
     left: 50%;
     opacity: inherit;

@@ -96,7 +96,7 @@ export const Background = styled.div`
     background-size: 100% cover; 
     margin:0;
     width: 100%;
-    height: 35vh;
+    height: 30vh;
     content:100%;
     color: #fff;
     }

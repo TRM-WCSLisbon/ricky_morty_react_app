@@ -10,14 +10,14 @@ const StyledBurger = styled.div`
   top: 15px;
   right: 20px;
   z-index: 20;
-  display: block;
+  overflow: hidden;
 
   //@media (max-width: 768px) 
   {
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
-    background:#fff;
+    background: #fff;
     border-radius: 10px;
     height: 40px;
     opacity:0.85;

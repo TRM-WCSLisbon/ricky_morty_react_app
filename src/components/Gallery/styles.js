@@ -65,14 +65,22 @@ export const Header = styled.div`
   }
 }
 @media only screen and (max-width: 647px) {
-    {
-        display: flex;
-        position: relative;
-        padding: 20px;
-        margin-top: 20px;
-        margin-left: auto;
-        margin-right: auto;
-    };
+    span{
+      font-size:0.6em;
+      width: 85%;
+    }
+}
+@media only screen and (max-width: 647px) {
+  {
+      display: flex;
+      position: relative;
+      padding: 20px;
+      margin-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
+  };
+  span{
+    width: 85%;
   }
 }
 @media only screen and (max-width: 450px) {
@@ -80,8 +88,12 @@ export const Header = styled.div`
         padding: 10px;
         margin-left: 10px;
         margin-right: 10px;
+        font-size:1.1em;
     };
-  }
+    span{
+      padding: 10px;
+      width:auto;
+    }
 }
 `;
 
@@ -89,21 +101,14 @@ export const CardGrid = styled.ul`
   font: 3em "get_schwifty";
   color: #E97299;
   display: ${({ loading }) => (loading ? "block" : "grid")};
-  grid-template-columns: repeat(auto-fit, 250px);
-  grid-gap: 30px;
-  margin: 30px;
+  grid-template-columns: repeat(auto-fit, 300px);
+  grid-gap: 60px;
+  margin: 0 30px;
   align-items: center;
   justify-content: center;
   a { color: inherit; } ;
 
-  @media only screen and (max-width: 590px) {
-    {
-    grid-template-columns: repeat(auto-fit, 200px);
-    margin: 30px 0;
-        
-    };
-  }
-}
+  
   #container {
     position: relative;
     
@@ -145,5 +150,25 @@ export const CardGrid = styled.ul`
   img #char:hover {
     visibility: visible;
     opacity: 1;
+  }
+  @media only screen and (max-width: 720px) {
+    {
+    grid-template-columns: repeat(auto-fit, 250px);
+    grid-gap:20px;
+        
+    };
+  }
+  @media only screen and (max-width: 590px) {
+    {
+    grid-template-columns: repeat(auto-fit, 250px);
+    margin: 20px 0;
+        
+    };
+  }
+  @media only screen and (max-width: 519px) {
+    {
+    grid-template-columns: repeat(auto-fit, 300px);
+
+    };
   }
 `;
