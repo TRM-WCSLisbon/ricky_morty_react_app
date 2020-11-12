@@ -15,7 +15,7 @@ const Ul = styled.ul`
   justify-content: center;
   text-align: center;
   flex-flow: column nowrap;
-  background-color: #31445E;
+  background-color: #59B4A1;
   opacity: 0.85;
   // position: fixed;
   transition: transform 0.45s ease-in-out;

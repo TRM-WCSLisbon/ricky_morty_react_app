@@ -42,7 +42,7 @@ export const Header = styled.div`
     -webkit-text-stroke: 1px #f5f5f5;
     
     p {
-      color: #21d8ff;
+      color: #59B4A1;
     }
     
     @media only screen and (max-width: 768px) {
