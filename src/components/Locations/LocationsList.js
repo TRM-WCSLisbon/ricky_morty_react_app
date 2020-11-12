@@ -21,7 +21,7 @@ class LocationsList extends React.Component {
     console.log(currentPage);
     console.log(this.props);
     // console.log(location.search);
-    // this.getLocations();
+    this.getLocations();
   }
 
   getLocations() {
