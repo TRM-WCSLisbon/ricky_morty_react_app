@@ -40,7 +40,6 @@ const Ul = styled.ul`
     margin-top: 20px;
     list-style: none;
     color: #fff;
-    padding-bottom: 20px;
     position: relative;
 
   }

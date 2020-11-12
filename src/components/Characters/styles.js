@@ -186,6 +186,7 @@ export const CardGrid = styled.ul`
   grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
   margin: 0 60px;
   grid-gap: 25px;
+  
 `;
 
 export const PageNumber = styled.li`
