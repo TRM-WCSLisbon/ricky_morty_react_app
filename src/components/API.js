@@ -1,8 +1,7 @@
-import axios from 'axios';
+import axios from "axios";
 
-const api = axios.create({
-  baseURL: 'https://rickandmortyapi.com/api/',
+const API = axios.create({
+  baseURL: "https://rickandmortyapi.com/api/",
 });
 
-export default api;
-
+export default API;

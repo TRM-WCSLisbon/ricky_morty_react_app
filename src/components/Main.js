@@ -1,9 +1,9 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import Gallery from './Gallery/Gallery';
-import Characters from './Characters/Characters';
-import Locations from './Locations/Locations';
-import Episodes from './Episodes/Episodes';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
+import Gallery from "./Gallery/Gallery";
+import Characters from "./Characters/Characters";
+import Locations from "./Locations/Locations";
+import Episodes from "./Episodes/Episodes";
 
 // Create path for nav links
 
