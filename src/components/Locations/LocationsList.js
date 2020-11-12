@@ -9,43 +9,74 @@ class LocationsList extends React.Component {
     super(props);
     this.state = {
       locations: [],
-      page: 1,
+      page: null,
     };
     this.getLocations = this.getLocations.bind(this);
   }
   componentDidMount() {
+    const initialPage = Number(
+      querystring.parse(this.props.location.search).page
+    );
+    // console.log(location.search);
+    // console.log(querystring.parse(this.props.location.search));
+
+    this.setState({ page: initialPage });
+    // console.log(this.state.page);
+
+    // console.log(currentPage);
+    // console.log(this.props);
+
+    this.getLocations(initialPage);
+  }
+
+  componentDidUpdate() {
     const currentPage = Number(
       querystring.parse(this.props.location.search).page
     );
 
+    if (currentPage !== this.state.page) {
+      // console.log("buhh");
+      this.getLocations(currentPage);
+      this.setState({ page: currentPage });
+    }
+
     console.log(currentPage);
-    console.log(this.props);
-    // console.log(location.search);
-    this.getLocations();
   }
 
-  getLocations() {
-    // console.log("Hello world on getLocations");
-    API.get(`/location?page=1`).then(
-      //(`/location?page=`)
-      (response) => this.setState({ locations: response.data.results })
-      // console.log(response.data.results)
+  getLocations(currentPage) {
+    API.get(`/location?page=${currentPage}`).then((response) =>
+      this.setState({ locations: response.data.results })
     );
   }
 
   render() {
     return (
       <div>
+        <Links />
+
         {this.state.locations.map((location) => (
           <LocationsDetails {...location} key={location.id} />
         ))}
 
-        <Link to="/location?page=2">2</Link>
-
-        {/* {console.log("Hello world on render")} */}
+        {this.state.locations.map((location) => (
+          <h1 key={location.id}>{location.name}</h1>
+        ))}
       </div>
     );
   }
 }
 
 export default withRouter(LocationsList);
+
+function Links() {
+  return (
+    <div>
+      <Link to="/locations?page=1">1</Link>
+      <Link to="/locations?page=2">2</Link>
+      <Link to="/locations?page=3">3</Link>
+      <Link to="/locations?page=4">4</Link>
+      <Link to="/locations?page=5">5</Link>
+      <Link to="/locations?page=6">6</Link>
+    </div>
+  );
+}
