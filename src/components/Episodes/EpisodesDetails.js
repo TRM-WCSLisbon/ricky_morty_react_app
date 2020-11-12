@@ -1,46 +1,42 @@
 import React from "react";
-import axios from "axios";
-import image from "./episodeImage.png";
-import "./EpisodeDetails.css";
-// import SingleEpisodeDetail from "./SingleEpisodeDetail";
 
-class EpisodeDetails extends React.Component {
-  state = {
-    episode: [],
-  };
+const EpisodeDetails = (props) => (
+  <div>
+    {/* all available data of episode */}
+    <p>
+      <strong> Id: </strong>
+      {props.id}
+    </p>
+    <p>
+      <strong> Name: </strong>
+      {props.name}
+    </p>
+    <p>
+      <strong> Air-date: </strong>
+      {props.air_date}
+    </p>
+    <p>
+      <strong> Episode: </strong>
+      {props.episode}
+    </p>
+    <p>
+      <strong> Characters: </strong>
+      {props.characters}
+    </p>
+    <p>
+      <strong> URL: </strong>
+      {props.url}
+    </p>
+    <p>
+      <strong> Created: </strong>
+      {props.created}
+    </p>
 
-  //   runs after render ()
-  componentDidMount() {
-    this.getEpisode();
-  }
-
-  //   gets data from API
-  getEpisode = () => {
-    axios
-      .get(`https://rickandmortyapi.com/api/episode`)
-      .then((response) => console.log(response));
-  };
-
-  render() {
-    //console.log({props.match.params.id});
-
-    return (
-      <div className="episode-details">
-        <img src={image} alt="episode sample pic" />
-        <div className="card-detail">
-          {/* all available data of episode */}
-          <p>
-            <strong> Id: </strong>
-            {/* {this.props.id} */}
-          </p>
-          <p>
-            <strong> Name: </strong>
-            {/* {this.props.name} */}
-          </p>
-        </div>
-      </div>
-    );
-  }
-}
+    <button type="submit" onClick="#">
+      {" "}
+      Back{" "}
+    </button>
+  </div>
+);
 
 export default EpisodeDetails;
