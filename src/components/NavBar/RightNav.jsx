@@ -17,9 +17,10 @@ const Ul = styled.ul`
   flex-flow: column nowrap;
   background-color: #31445E;
   opacity: 0.85;
-  position: absolute;
-  // transform: ${({ open }) => (open ? 'opacity(1s)' : 'opacity(0s)')};
-  // transform: ${({ open }) => (open ? 'position(fixed)' : 'position(absolute)')};
+  // position: fixed;
+  transition: transform 0.45s ease-in-out;
+  opacity: ${({ open }) => (open ? 1 : 0)};
+  position: ${({ open }) => (open ? 'absolute' : 'fixed')};
   transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')} ;
   top: 0;
   right: 0;
@@ -28,7 +29,6 @@ const Ul = styled.ul`
   width: 30vw;
   // width: 100%;
   padding-top: -0.8rem;
-  transition: transform 0.45s ease-in-out;
   
 }
 
