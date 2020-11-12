@@ -7,6 +7,11 @@ import epi from './epi.gif';
 import cont from './phone.gif';
 import { Header, CardGrid } from './styles';
 
+// function Gallery
+// display images
+// on Hover display correspondence of text
+// link image to that List
+
 function Gallery() {
   return (
     <div>

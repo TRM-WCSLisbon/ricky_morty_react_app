@@ -13,7 +13,6 @@ function getClickablePages(actualPage) {
   const offsets = [0, 1, 2, 3, 4];
   return offsets.map((number) => parseInt(actualPage, 10) + number);
 }
-
 // function getPage to get nextPage
 function getPage(direction, actualPage) {
   const nextPage = parseInt(actualPage, 10) + direction;
