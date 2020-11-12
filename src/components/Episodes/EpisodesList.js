@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import EpisodeDetails from "./EpisodesDetails";
-import SingleEpisodeDetail from "./SingleEpisodeDetail";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class EpisodeList extends React.Component {
   // stores all the changes}

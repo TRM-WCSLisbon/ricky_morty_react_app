@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
-import api from '../API';
+import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
+import api from "../API";
 
 // function Display episodes
 // function/ link to return to CharactersList
@@ -23,9 +23,11 @@ useEffect(() => {
 
 function setDisplayEpisodes(id) {
   setCharacters(
-    characters.map((char) => (char.id === id
-      ? { ...char, displayEpisodes: !char.displayEpisodes }
-      : char)),
+    characters.map((char) =>
+      char.id === id
+        ? { ...char, displayEpisodes: !char.displayEpisodes }
+        : char
+    )
   );
 }
 
