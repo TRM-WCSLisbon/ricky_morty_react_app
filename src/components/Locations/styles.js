@@ -142,7 +142,7 @@ export const Card = styled.div`
   }
   
   .card:hover .card-inner {
-    transform: rotateY(180deg);
+    transform: rotateY(360deg);
   }
   
   .card-front,
