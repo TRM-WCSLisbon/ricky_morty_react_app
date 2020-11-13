@@ -21,7 +21,7 @@ const NavBar = () => (
           </Link>
         </li>
         <li>
-          <Link to="/episodes" select>
+          <Link to="/episodes?page=1" select>
             Episodes
           </Link>
         </li>

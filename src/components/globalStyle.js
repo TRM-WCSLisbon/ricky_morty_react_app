@@ -15,19 +15,22 @@ export default createGlobalStyle`
   }
   html, body, #root {
     height: 100%;
+    width: 100%;
   }
   body {
-    background: linear-gradient(to right,  #77D653, #67C64C, #C3F295, #67C64C, #77D653);
+    background: linear-gradient(200deg, #000,  #77D653, #67C64C, #C3F295, #67C64C, #77D653, #000);
     -webkit-font-smoothing: antialiased !important;
+    color: #fff;
   }
   button {
     cursor: pointer;
     outline: none !important;
   }
-  body, input, button {
-    font: 12px 'Roboto', sans-serif;
-  }
   ul {
     list-style: none;
   }
-`;
+  `;
+
+// body, input, button {
+//   font: 1em 'Roboto', sans-serif;
+// }
