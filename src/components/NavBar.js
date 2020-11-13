@@ -8,7 +8,7 @@ const NavBar = () => (
       <ul>
         <li><Link exact to="/" select>Home</Link></li>
         <li><Link to="/characters" select>Characters</Link></li>
-        <li><Link to="/locations" select>Locations</Link></li>
+        <li><Link to="/locations?page=1" select>Locations</Link></li>
         <li><Link to="/episodes" select>Episodes</Link></li>
       </ul>
     </nav>

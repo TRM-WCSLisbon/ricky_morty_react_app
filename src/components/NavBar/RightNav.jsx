@@ -78,7 +78,7 @@ const RightNav = ({ open }) => (
         </Link>
       </li>
       <li>
-        <Link to="/locations" select>
+        <Link to="/locations?page=1" select>
           Locations
         </Link>
       </li>
