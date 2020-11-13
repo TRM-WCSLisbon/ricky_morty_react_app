@@ -66,10 +66,11 @@ export const Card = styled.div`
   border: 4px solid #ab20fd;
   box-shadow: 0 10px 25px #ab20fd;
   img {
-    width: 300px;
-    height: 300px;
+    margin: 10px auto;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
-    border-radius: 7px;
+    border-radius: 50px;
   }
   // ul {
   //   opacity: ${(props) => (props.displayEpisodes ? 1 : 0)};
@@ -107,7 +108,6 @@ export const Card = styled.div`
   .card span {
     font-size: 1.2em;
     font-weight: bold;
-    border-bottom: 1px #fff solid;
     padding-bottom: 10px;
     margin-bottom: 10px;
   }
@@ -126,8 +126,11 @@ export const Card = styled.div`
     box-shadow: 2px 3px 2px 2px #d58181;
   }
   .card img {
-    width: 100%;
-    object-fit: cover;
+    // width: 100%;
+    margin-top:-15px;
+    display: flex;
+    align-items: center;
+    // object-fit: cover;
   }
   
   .card-inner {
@@ -147,8 +150,6 @@ export const Card = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
   }
   
   .card-back {
@@ -156,7 +157,6 @@ export const Card = styled.div`
     border-radius: 7px;
     color: white;
     padding: 20px;
-    transform: rotateY(180deg);
   }
   
   .card li {
@@ -173,8 +173,24 @@ export const CardGrid = styled.ul`
   
 `;
 
-export const PageNumber = styled.li`
-  color: ${({ actualPage }) => (actualPage ? "#21d8ff" : "#000")};
+export const PageNumber = styled.div`
+  // color: ${({ actualPage }) => (actualPage ? "#21d8ff" : "#000")};
+  color: #000;
+
+  ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  li{
+    padding: 30px 30px;
+  }
+
+  li a:hover{
+    color: #21d8ff;
+  }
+
+  
 `;
 
 const spinnerAnimation = keyframes`

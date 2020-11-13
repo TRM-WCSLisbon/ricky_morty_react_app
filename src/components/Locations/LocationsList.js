@@ -4,8 +4,9 @@ import querystring from 'query-string';
 import API from '../API';
 // import LocationsDetails from './LocationsDetails';
 import {
-  CardGrid, Card, Header, Spinner,
+  CardGrid, Card, Header, PageNumber,
 } from './styles';
+import LocationsImg from './LocationsImg.jpg';
 
 class LocationsList extends React.Component {
   constructor(props) {
@@ -70,20 +71,47 @@ class LocationsList extends React.Component {
 
           {this.state.locations.map((location) => (
             <Card key={location.id}>
-
-              <h1 />
-              <span>{location.id}</span>
-              <h3>Name:</h3>
-              {' '}
-              <span>{location.name}</span>
-              <h3>Type:</h3>
-              {' '}
-              <span>{location.type}</span>
+              <div className="card">
+                <div className="card-inner">
+                  <div className="card-front">
+                    <div className="card-back">
+                      <ul>
+                        <img src={LocationsImg} alt={location.name} />
+                        <li>
+                          <span>{location.id}</span>
+                        </li>
+                        <li>
+                          <h3>Name:</h3>
+                          {' '}
+                          <span>{location.name}</span>
+                        </li>
+                        <li>
+                          <h3>Type:</h3>
+                          {' '}
+                          <span>{location.type}</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
             </Card>
           ))}
-          <Links />
         </CardGrid>
+          <Header>
+            <PageNumber>
+              <ul>
+                <li><Link to="/locations?page=1">1</Link></li>
+                <li><Link to="/locations?page=2">2</Link></li>
+                <li><Link to="/locations?page=3">3</Link></li>
+                <li><Link to="/locations?page=4">4</Link></li>
+                <li><Link to="/locations?page=5">5</Link></li>
+                <li><Link to="/locations?page=6">6</Link></li>
+              </ul>
+            </PageNumber>
+          </Header>
+
       </>
     );
   }
@@ -91,18 +119,18 @@ class LocationsList extends React.Component {
 
 export default withRouter(LocationsList);
 
-function Links() {
-  return (
-    <div>
-      <Link to="/locations?page=1">1</Link>
-      <Link to="/locations?page=2">2</Link>
-      <Link to="/locations?page=3">3</Link>
-      <Link to="/locations?page=4">4</Link>
-      <Link to="/locations?page=5">5</Link>
-      <Link to="/locations?page=6">6</Link>
-    </div>
-  );
-}
+// function Links() {
+//   return (
+//     <ul>
+//       <li><Link to="/locations?page=1">1</Link></li>
+//       <li><Link to="/locations?page=2">2</Link></li>
+//       <li><Link to="/locations?page=3">3</Link></li>
+//       <li><Link to="/locations?page=4">4</Link></li>
+//       <li><Link to="/locations?page=5">5</Link></li>
+//       <li><Link to="/locations?page=6">6</Link></li>
+//     </ul>
+//   );
+// }
 
 { /* {this.state.locations.map((location) => (
                         <LocationsDetails {...location} key={location.id} />
