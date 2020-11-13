@@ -31,11 +31,6 @@ const EpisodeDetails = (props) => (
       <strong> Created: </strong>
       {props.created}
     </p>
-
-    <button type="submit" onClick="#">
-      {" "}
-      Back{" "}
-    </button>
   </div>
 );
 

@@ -35,12 +35,11 @@ class EpisodesList extends React.Component {
     );
 
     if (currentPage !== this.state.page) {
-      // console.log("buhh");
       this.getEpisodes(currentPage);
       this.setState({ page: currentPage });
     }
 
-    console.log(currentPage);
+    // console.log(currentPage);
   }
 
   getEpisodes(currentPage) {
@@ -54,9 +53,9 @@ class EpisodesList extends React.Component {
       <div>
         <Links />
 
-        {this.state.episodes.map((episode) => (
+        {/* {this.state.episodes.map((episode) => (
           <EpisodesDetails {...episode} key={episode.id} />
-        ))}
+        ))} */}
 
         {this.state.episodes.map((episode) => (
           <div>
