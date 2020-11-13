@@ -1,8 +1,11 @@
-import React from "react";
-import API from "../API";
-import { Link, withRouter } from "react-router-dom";
-import querystring from "query-string";
-import LocationsDetails from "./LocationsDetails";
+import React from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import querystring from 'query-string';
+import API from '../API';
+// import LocationsDetails from './LocationsDetails';
+import {
+  CardGrid, Card, Header, Spinner,
+} from './styles';
 
 class LocationsList extends React.Component {
   constructor(props) {
@@ -13,9 +16,10 @@ class LocationsList extends React.Component {
     };
     this.getLocations = this.getLocations.bind(this);
   }
+
   componentDidMount() {
     const initialPage = Number(
-      querystring.parse(this.props.location.search).page
+      querystring.parse(this.props.location.search).page,
     );
     // console.log(location.search);
     // console.log(querystring.parse(this.props.location.search));
@@ -31,7 +35,7 @@ class LocationsList extends React.Component {
 
   componentDidUpdate() {
     const currentPage = Number(
-      querystring.parse(this.props.location.search).page
+      querystring.parse(this.props.location.search).page,
     );
 
     if (currentPage !== this.state.page) {
@@ -44,24 +48,43 @@ class LocationsList extends React.Component {
   }
 
   getLocations(currentPage) {
-    API.get(`/location?page=${currentPage}`).then((response) =>
-      this.setState({ locations: response.data.results })
-    );
+    API.get(`/location?page=${currentPage}`).then((response) => this.setState({ locations: response.data.results }));
   }
 
   render() {
     return (
-      <div>
-        <Links />
+      <>
+        <Header>
+          <header>
+            <h1>
+              Locations
+            </h1>
 
-        {this.state.locations.map((location) => (
-          <LocationsDetails {...location} key={location.id} />
-        ))}
+          </header>
+        </Header>
+        <CardGrid>
+          {/* <CardGrid loading={loading}> */}
+          {/* {loading ? (
+          <Spinner />
+        ) : ( */}
 
-        {this.state.locations.map((location) => (
-          <h1 key={location.id}>{location.name}</h1>
-        ))}
-      </div>
+          {this.state.locations.map((location) => (
+            <Card key={location.id}>
+
+              <h1 />
+              <span>{location.id}</span>
+              <h3>Name:</h3>
+              {' '}
+              <span>{location.name}</span>
+              <h3>Type:</h3>
+              {' '}
+              <span>{location.type}</span>
+
+            </Card>
+          ))}
+          <Links />
+        </CardGrid>
+      </>
     );
   }
 }
@@ -80,3 +103,7 @@ function Links() {
     </div>
   );
 }
+
+{ /* {this.state.locations.map((location) => (
+                        <LocationsDetails {...location} key={location.id} />
+                      ))} */ }
