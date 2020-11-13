@@ -1,8 +1,11 @@
-import React from 'react';
+import React from "react";
+import LocationsList from "./LocationsList";
 
 function Locations() {
   return (
-    <p>Locations</p>
+    <div>
+      <LocationsList />
+    </div>
   );
 }
 
