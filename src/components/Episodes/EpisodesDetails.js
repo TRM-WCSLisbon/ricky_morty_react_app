@@ -3,7 +3,7 @@ import React from "react";
 const EpisodeDetails = (props) => (
   <div>
     {/* all available data of episode */}
-    <p>
+    {/* <p>
       <strong> Id: </strong>
       {props.id}
     </p>
@@ -30,7 +30,7 @@ const EpisodeDetails = (props) => (
     <p>
       <strong> Created: </strong>
       {props.created}
-    </p>
+    </p> */}
   </div>
 );
 
