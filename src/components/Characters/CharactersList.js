@@ -69,7 +69,7 @@ export default function CharactersList({ match }) {
           <h1>
             Characters
           </h1>
-          <Search />
+          {/* <Search /> */}
         </header>
       </Header>
       <CardGrid loading={loading}>

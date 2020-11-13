@@ -26,7 +26,7 @@ const Ul = styled.ul`
   right: 0;
   height: 30vh;
   // height:100%;
-  width: 30vw;
+  width: 25vw;
   // width: 100%;
   padding-top: -0.8rem;
   
@@ -60,7 +60,7 @@ const Ul = styled.ul`
   } 
   @media (max-width: 449px) {
     height: 20vh;
-    font-size:0.8em;
+    font-size:0.6em;
     
     li{
       margin-top:0;

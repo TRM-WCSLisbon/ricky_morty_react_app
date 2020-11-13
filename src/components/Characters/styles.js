@@ -214,14 +214,14 @@ export const Spinner = styled.div`
     border-bottom-color: #21d8ff;
     border-radius: 50%;
     content: "";
-    height: 40px;
+    height: 400px;
     left: 50%;
     opacity: inherit;
     position: absolute;
     top: 25%;
     transform: translate3d(-50%, -50%, 0);
     transform-origin: center;
-    width: 40px;
+    width: 400px;
     will-change: transform;
   }
 `;

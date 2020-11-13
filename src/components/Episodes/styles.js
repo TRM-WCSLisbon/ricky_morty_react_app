@@ -127,6 +127,7 @@ export const Card = styled.div`
   }
   .card img {
     // width: 100%;
+    margin-top: -10px;
     display: flex;
     align-items: center;
     // object-fit: cover;
