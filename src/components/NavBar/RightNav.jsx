@@ -73,7 +73,7 @@ const RightNav = ({ open }) => (
   <Ul open={open}>
     <ul>
       <li>
-        <Link to="/characters/" select>
+        <Link to="/character?page=1" select>
           Characters
         </Link>
       </li>
