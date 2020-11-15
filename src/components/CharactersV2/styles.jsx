@@ -191,30 +191,38 @@ export const CardGrid = styled.ul`
 
 export const PageNumber = styled.li`
   // color: ${({ actualPage }) => (actualPage ? "#21d8ff" : "#000")};
+
   .pagination {
     margin: 15px auto;
     display: flex;
+    justify-content: center;
     list-style: none;
     outline: none;
+
   }
   .pagination > .active > a{
-    background-color: #47ccde ;
-    border-color: #47ccde ;
+    background-color: #21d8ff ;
+    border-color: #21d8ff ;
     color: #fff;
+
   }
   .pagination > li > a{
-    border: 1px solid #47ccde ;
+    font-size: 1.5em;
+    border: 1px solid #59B4A1 ;
     padding: 5px 10px;
     outline: none;
     cursor: pointer;
+    font-weight: bold;
+  }
+  .pagination > li > span{
   }
   .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
-    background-color: #47ccde ;
-    border-color: #47ccde;
+    background-color: #59B4A1 ;
+    border-color: #ab20fd;
     outline: none ;
   }
   .pagination > li > a, .pagination > li > span{
-    color: #47ccde
+    color: #000
   }
   .pagination > li:first-child > a, .pagination > li:first-child > span, .pagination > li:last-child > a, .pagination > li:last-child > span{
     border-radius: unset

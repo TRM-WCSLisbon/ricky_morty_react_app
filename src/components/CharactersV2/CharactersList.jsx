@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
 // import { NavLink } from 'react-router-dom';
-import querystring from 'query-string';
 import CharacterCard from './CharactersCard';
 import SearchBar from './SearchBar/SearchBar';
 import API from '../API';
@@ -13,18 +12,21 @@ import {
 class CharacterList extends Component {
   state = {
     characters: [],
-    currentPage: '',
+    currentPage: null,
+    // page:null,
   };
 
   componentDidMount() {
     this.getCharacters();
   }
 
-  getCharacters() {
+  getCharacters(currentPage) {
     API
-      .get(`/character/?page=${this.state.currentPage}`)
+      .get(`/character/?page=${currentPage}`)
       .then((response) => {
+        //   console.log(response.data),
         this.setState({
+        //   currentPage: response.match.param.page,
           pageCount: response.data.info.pages,
           characters: response.data.results,
         });
@@ -45,7 +47,7 @@ handlePageClick = (event) => {
   this.setState({
     currentPage: selectedPage,
   }, () => {
-    this.getCharacters();
+    this.getCharacters(this.state.currentPage);
   });
 };
 
@@ -61,7 +63,6 @@ render() {
         </header>
       </Header>
       <CardGrid>
-        {/* {this.state.postData} */}
         {this.state.characters.map((character) => (
           <Card>
             <CharacterCard {...character} key={character.id} />

@@ -10,7 +10,7 @@ export const Search = styled.div`
 `;
 export const Input = styled.input`
 {
-	width: 100%;
+	width: 75%;
 	padding: 16px;
 	font-size: 36px;
 	font-style: italic;
