@@ -26,8 +26,6 @@ function Character(props) {
               <h3>Status:</h3>
               {' '}
               <span>
-                {/* className={this.state.status ? 'status-alive' : 'status-dead'}
-            {props.status.filter((status) =>)statusprops.map() */}
                 {props.status}
               </span>
             </li>

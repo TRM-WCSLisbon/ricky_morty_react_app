@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import API from '../API';
-import Search from '../Search/Search';
+import SearchBar from './SearchBar/SearchBar';
 
 // create style file with SCSS and import styles
 import {
@@ -20,8 +20,6 @@ function getPage(direction, actualPage) {
   return nextPage >= 1 ? nextPage : 1;
 }
 
-// function to searchCharacters
-
 // function CharactersList
 export default function CharactersList({ match }) {
   // Use Hook to characters = useState
@@ -32,18 +30,13 @@ export default function CharactersList({ match }) {
   const clickablePages = getClickablePages(Number(match.params.page) || 1);
   // pass page on a variable
   const page = Number(match.params.page) || 1;
-  // pass status to get correct color
-  // const statusChar = getStatus(match.params.status);
-
-  // const get Searchcharacters
 
   // useEffect for sync with page of API
   useEffect(() => {
     async function loadData() {
       setLoading(true);
-      const apiCharacters = await API.get(`/character/?page=${page}`);
+      const apiCharacters = await API.get(`/characters/?page=${page}`);
 
-      // searchCharValue(apiSearch.data.results);
       setCharacters(apiCharacters.data.results);
       setLoading(false);
       // console.log(apiCharacters);
@@ -51,8 +44,6 @@ export default function CharactersList({ match }) {
 
     loadData();
   }, [match.params.page, page]);
-
-  // const apiSearch = await API.get(`/character/?name=${searchValue}`);
 
   // function setDisplayEpisodes(id) {
   //   setCharacters(
@@ -69,7 +60,7 @@ export default function CharactersList({ match }) {
           <h1>
             Characters
           </h1>
-          <Search />
+          <SearchBar />
         </header>
       </Header>
       <CardGrid loading={loading}>
