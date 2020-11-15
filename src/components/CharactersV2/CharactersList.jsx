@@ -3,9 +3,9 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/state-in-constructor */
 import React, { Component } from 'react';
-import { withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 // import ReactPaginate from 'react-paginate';
-import queryString from 'query-string';
+// import queryString from 'query-string';
 import CharacterCard from './CharactersCard';
 import SearchBar from './SearchBar/SearchBar';
 import API from '../API';
@@ -15,75 +15,18 @@ import {
 
 class CharacterList extends Component {
   state = {
-    // offset: 0,
-    // currentPage: 0,
     characters: [],
-    page: null,
   };
 
-  //   componentDidMount() {
-  //     this.getCharacters();
-  //   }
   componentDidMount() {
-    const initialPage = Number(
-      queryString.parse(this.props.location.search).page,
-    );
-
-    this.setState({ page: initialPage });
-
-    this.getCharacters(initialPage);
-  }
-
-  componentDidUpdate() {
-    const currentPage = Number(
-      queryString.parse(this.props.location.search).page,
-    );
-
-    if (currentPage !== this.state.page) {
-      this.getCharacters(currentPage);
-      this.setState({ page: currentPage });
-    }
+    this.getCharacters();
   }
 
     getCharacters = () => {
       API
-        .get(`/character?page=${currentPage}`)
+        .get('/character/')
         .then((response) => this.setState({ characters: response.data.results }));
     };
-    // getCharacters = () => {
-    //   API
-    //     .get(`/character?page=${currentPage}`)
-    //     .then((response) => {
-    //       const page = response.data.info.pages;
-    //       const characters = response.data.results;
-    //       const slice = characters.slice(this.state.offset);
-    //       const postData = slice.map((character) => (
-    //         <CardGrid>
-    //           <Card>
-    //             <CharacterCard {...character} key={character.id} />
-    //           </Card>
-    //         </CardGrid>
-    //       ));
-
-    //       this.setState({
-    //         pageCount: Math.ceil(page),
-
-    //         postData,
-    //       });
-    //     });
-    // };
-
-// handlePageClick = (e) => {
-//   const selectedPage = e.selected;
-//   const offset = selectedPage;
-
-//   this.setState({
-//     currentPage: selectedPage,
-//     offset,
-//   }, () => {
-//     this.getCharacters();
-//   });
-// };
 
   searchCharacters = (event) => {
     const searchValue = event.target.value;
@@ -111,7 +54,6 @@ class CharacterList extends Component {
             </Card>
           ))}
         </CardGrid>
-        {/* {this.state.postData} */}
         {/* <PageNumber>
           <ReactPaginate
             previousLabel="prev"
@@ -132,4 +74,4 @@ class CharacterList extends Component {
   }
 }
 
-export default withRouter (CharacterList);
+export default withRouter(CharacterList);
