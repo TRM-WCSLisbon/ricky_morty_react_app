@@ -1,3 +1,4 @@
+/* eslint-disable react/state-in-constructor */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
@@ -41,52 +42,52 @@ class CharacterList extends Component {
         .then((response) => this.setState({ characters: response.data.results }));
     };
 
-handlePageClick = (event) => {
-  const selectedPage = event.selected;
+    handlePageClick = (event) => {
+      const selectedPage = event.selected;
 
-  this.setState({
-    currentPage: selectedPage,
-  }, () => {
-    this.getCharacters(this.state.currentPage);
-  });
-};
+      this.setState({
+        currentPage: selectedPage,
+      }, () => {
+        this.getCharacters(this.state.currentPage);
+      });
+    };
 
-render() {
-  return (
-    <div>
-      <Header>
-        <header>
-          <h1>
-            Characters
-          </h1>
-          <SearchBar searchInputFunction={this.searchCharacters} />
-        </header>
-      </Header>
-      <CardGrid>
-        {this.state.characters.map((character) => (
-          <Card>
-            <CharacterCard {...character} key={character.id} />
-          </Card>
-        ))}
-      </CardGrid>
-      <PageNumber>
-        <ReactPaginate
-          previousLabel="Prev"
-          nextLabel="Next"
-          breakLabel="..."
-          breakClassName="break-me"
-          pageCount={this.state.pageCount}
-          marginPagesDisplayed={1}
-          pageRangeDisplayed={3}
-          onPageChange={this.handlePageClick}
-          containerClassName="pagination"
-          subContainerClassName="pages pagination"
-          activeClassName="active"
-        />
-      </PageNumber>
-    </div>
-  );
-}
+    render() {
+      return (
+        <div>
+          <Header>
+            <header>
+              <h1>
+                Characters
+              </h1>
+              <SearchBar searchInputFunction={this.searchCharacters} />
+            </header>
+          </Header>
+          <CardGrid>
+            {this.state.characters.map((character) => (
+              <Card>
+                <CharacterCard {...character} key={character.id} />
+              </Card>
+            ))}
+          </CardGrid>
+          <PageNumber>
+            <ReactPaginate
+              previousLabel="Prev"
+              nextLabel="Next"
+              breakLabel="..."
+              breakClassName="break-me"
+              pageCount={this.state.pageCount}
+              marginPagesDisplayed={1}
+              pageRangeDisplayed={3}
+              onPageChange={this.handlePageClick}
+              containerClassName="pagination"
+              subContainerClassName="pages pagination"
+              activeClassName="active"
+            />
+          </PageNumber>
+        </div>
+      );
+    }
 }
 
 export default withRouter(CharacterList);
