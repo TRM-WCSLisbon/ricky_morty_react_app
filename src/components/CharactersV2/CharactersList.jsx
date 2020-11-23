@@ -1,8 +1,8 @@
 /* eslint-disable react/state-in-constructor */
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, NavLink as Link } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
-// import { NavLink } from 'react-router-dom';
+
 import CharacterCard from './CharactersCard';
 import SearchBar from './SearchBar/SearchBar';
 import API from '../API';
@@ -13,7 +13,8 @@ import {
 class CharacterList extends Component {
   state = {
     characters: [],
-    currentPage: null,
+    currentPage: '',
+    pageCount: '',
     // page:null,
   };
 
@@ -24,8 +25,13 @@ class CharacterList extends Component {
   getCharacters(currentPage) {
     API
       .get(`/character/?page=${currentPage}`)
+      // .get(`/character`)
+
       .then((response) => {
-        //   console.log(response.data),
+        // console.log(response.data.info)
+        // console.log(this.props.match);
+
+        // console.log(this.props.match.params)
         this.setState({
         //   currentPage: response.match.param.page,
           pageCount: response.data.info.pages,
@@ -44,10 +50,12 @@ class CharacterList extends Component {
 
     handlePageClick = (event) => {
       const selectedPage = event.selected;
+      console.log(selectedPage);
 
       this.setState({
         currentPage: selectedPage,
-      }, () => {
+      },
+      () => {
         this.getCharacters(this.state.currentPage);
       });
     };
@@ -65,9 +73,11 @@ class CharacterList extends Component {
           </Header>
           <CardGrid>
             {this.state.characters.map((character) => (
-              <Card>
-                <CharacterCard {...character} key={character.id} />
-              </Card>
+              <Link to={`/characters/${character.id}`}>
+                <Card>
+                  <CharacterCard {...character} key={character.id} />
+                </Card>
+              </Link>
             ))}
           </CardGrid>
           <PageNumber>
