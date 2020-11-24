@@ -135,7 +135,25 @@ class CharacterList extends Component {
 
             ))}
           </CardGrid>
-         
+          {/* <PageNumber>
+            <ReactPaginate
+              previousLabel="Prev"
+              nextLabel="Next"
+              breakLabel="..."
+              breakClassName="break-me"
+              pageCount={this.state.pageCount}
+              marginPagesDisplayed={1}
+              pageRangeDisplayed={3}
+              onPageChange={this.handlePageClick}
+              // previousLinkClassName={this.state.prev}
+              // nextLinkClassName={this.state.next}
+              // disabledClassName={"pagination__link--disabled"}
+              // activeClassName={"pagination__link--active"}
+              containerClassName="pagination"
+              subContainerClassName="pages pagination"
+              activeClassName="active"
+            />
+          </PageNumber> */}
         </div>
       );
     }

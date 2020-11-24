@@ -21,33 +21,17 @@ class CharactersDetails extends Component {
     this.getCharacter();
   }
 
-  // componentDidUpdate (prevProps) {
-  //     console.log('previous props', prevProps.match.params.id)
-  //     console.log('current props', this.props.match.params.id)
-  //     //     if(prevProps.match.params.id !== this.props.match.params.id) {
-  //     //         const id = this.props.match.params.id
-  //     //         this.getCharacter(id)
-  //     //     }
-  // }
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      this.getCharacter();
+    }
+  }
 
-  getCharacter(currentPage) {
-    API.get(`/character?page=${currentPage}`).then((response) => {
-      console.log(response.data);
-      console.log(currentPage);
-      console.log(this.props.match.params);
-
-      const selectId = Number(this.props.match.params.id);
-
-      console.log(selectId);
-
-      const character = response.data.results.filter(
-        (character) => character.id === selectId
-      );
-
-      console.log("character", character[0]);
-
+  getCharacter() {
+    const currentCharacterId = Number(this.props.match.params.id);
+    API.get(`/character/${currentCharacterId}`).then((response) => {
       this.setState({
-        character: character[0],
+        character: response.data,
       });
     });
   }
@@ -61,9 +45,6 @@ class CharactersDetails extends Component {
   //     )
   //   );
   // }
-  //     useEffect(() => {
-  //       window.scrollTo(250, 250)
-  //   }, [props.match])
 
   render() {
     return (
@@ -127,9 +108,7 @@ class CharactersDetails extends Component {
                     </li>
                   </ul>
                 </div>
-                <div className="Episodes">
-                Episodes List
-                </div>
+                <div className="Episodes">Episodes List</div>
                 {/* <div
                     onClick={() => setDisplayEpisodes(this.state.character.id)}
                     displayEpisodes={this.state.character.displayEpisodes}
