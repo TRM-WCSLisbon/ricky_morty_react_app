@@ -8,7 +8,7 @@ function Characters() {
     <Switch>
       <Route exact path="/characters" component={CharactersList} />
       <Route path="/characters/:id" component={CharactersDetails} />
-      <Redirect to="/characters" />
+      <Redirect to="/characters?page=1" />
     </Switch>
   );
 }

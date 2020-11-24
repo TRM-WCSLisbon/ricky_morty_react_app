@@ -7,11 +7,10 @@ export const Header = styled.div`
     src: local("get_schwifty"), url(${HeaderFont}) format("truetype");
   }
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  padding: 50px 50px 30px;
+  padding: 50px 50px 10px;
 
   header {
     margin: 10px;
@@ -203,7 +202,10 @@ export const HeaderDetails = styled.div`
 
   header {
     margin: 10px;
-    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //user-select: none;
 
     @media only screen and (max-width: 600px) {
       margin-top: -30px;
@@ -223,8 +225,9 @@ export const HeaderDetails = styled.div`
   .IconBack {
     margin-bottom: 20px;
     height: 22px;
-    width: 100%;
-    /* margin-left: 545px; */
+    //width: 100%;
+    position: relative;
+    margin-right: 50px;
   }
   ul {
     display: flex;
@@ -258,6 +261,7 @@ export const Container = styled.div`
 display:grid;
 justify-content: center;
 align-items: center;
+margin-top:-50px;
 
 
 `;
@@ -302,9 +306,8 @@ export const CardDetails = styled.div`
   // }
 
     li {
-      font-size:1.5em;
+      font-size:1em;
       font-weight: bold;
-      width: 100%;
       border-radius: 20%;
       margin: 5px;
       margin-top: 10px;
@@ -315,12 +318,15 @@ export const CardDetails = styled.div`
   
   .column-left{
     float: left;
-    margin: 20px;
+    margin: -80px 20px 20px;
 
   }
   .column-right{
     float: right;
-    margin: 20px 75px;
+    margin: -80px 50px 0 0;
+  }
+  .Episodes{
+    
   }
 `;
 
@@ -336,18 +342,19 @@ export const CardGridDetails = styled.ul`
   color: white;
   padding: 20px;
   justify-content: center;
-align-items: center;
+  align-items: center;
 `;
 
 export const PageNumber = styled.li`
   // color: ${({ actualPage }) => (actualPage ? "#21d8ff" : "#000")};
 
   .pagination {
-    margin: 15px auto;
+    margin: 10px auto;
     display: flex;
     justify-content: center;
     list-style: none;
     outline: none;
+    margin-bottom: 30px;
 
   }
   .pagination > .active > a{
