@@ -257,13 +257,10 @@ export const HeaderDetails = styled.div`
   }
 `;
 export const Container = styled.div`
-
-display:grid;
-justify-content: center;
-align-items: center;
-margin-top:-50px;
-
-
+  display:grid;
+  justify-content: center;
+  align-items: center;
+  margin-top:-50px;
 `;
 export const CardDetails = styled.div`
   color: #fff;
@@ -318,15 +315,15 @@ export const CardDetails = styled.div`
   
   .column-left{
     float: left;
-    margin: -80px 20px 20px;
+    margin: -20px 20px 10px -20px;
 
   }
   .column-right{
     float: right;
-    margin: -80px 50px 0 0;
+    margin: -40px -20px 0 10px;
   }
   .Episodes{
-    
+  
   }
 `;
 
@@ -335,7 +332,7 @@ export const CardGridDetails = styled.ul`
   grid-template-columns: repeat(auto-fit, minmax(1fr));
   width:800px;
   height:550px;
-  margin: 20px 60px;
+  margin: 20px 50px;
   grid-gap: 25px;
   background-color: #333;
   border-radius: 10px;
@@ -349,12 +346,14 @@ export const PageNumber = styled.li`
   // color: ${({ actualPage }) => (actualPage ? "#21d8ff" : "#000")};
 
   .pagination {
-    margin: 10px auto;
+    margin: 10px;
     display: flex;
     justify-content: center;
+    align-items: center;
     list-style: none;
     outline: none;
     margin-bottom: 30px;
+    margin-right:130px;
 
   }
   .pagination > .active > a{

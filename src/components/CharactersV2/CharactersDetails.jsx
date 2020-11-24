@@ -1,14 +1,14 @@
 /* eslint-disable react/state-in-constructor */
-import React, { Component } from "react";
-import { NavLink as Link } from "react-router-dom";
-import ArrowBack from "@material-ui/icons/ArrowBack";
-import API from "../API";
+import React, { Component } from 'react';
+import { NavLink as Link } from 'react-router-dom';
+import ArrowBack from '@material-ui/icons/ArrowBack';
+import API from '../API';
 import {
   CardDetails,
   CardGridDetails,
   HeaderDetails,
   Container,
-} from "./styles";
+} from './styles';
 
 class CharactersDetails extends Component {
   state = {
@@ -75,40 +75,45 @@ class CharactersDetails extends Component {
                   {/* <h1>Name: {this.state.character.name}</h1> */}
                   <ul>
                     <li>
-                      <h3>Species:</h3>{" "}
+                      <h3>Species:</h3>
+                      {' '}
                       <span>
                         {this.state.character && this.state.character.species}
                       </span>
                     </li>
                     <li>
-                      <h3>Status:</h3>{" "}
+                      <h3>Status:</h3>
+                      {' '}
                       <span>
                         {this.state.character && this.state.character.status}
                       </span>
                     </li>
                     <li>
-                      <h3>Gender:</h3>{" "}
+                      <h3>Gender:</h3>
+                      {' '}
                       <span>
                         {this.state.character && this.state.character.gender}
                       </span>
                     </li>
                     <li>
-                      <h3>Origin:</h3>{" "}
+                      <h3>Origin:</h3>
+                      {' '}
                       <span>
-                        {this.state.character.origin &&
-                          this.state.character.origin.name}
+                        {this.state.character.origin
+                          && this.state.character.origin.name}
                       </span>
                     </li>
                     <li>
-                      <h3>Location:</h3>{" "}
+                      <h3>Location:</h3>
+                      {' '}
                       <span>
-                        {this.state.character.location &&
-                          this.state.character.location.name}
+                        {this.state.character.location
+                          && this.state.character.location.name}
                       </span>
                     </li>
                   </ul>
                 </div>
-                <div className="Episodes">Episodes List</div>
+                {/* <div className="Episodes">Episodes List</div> */}
                 {/* <div
                     onClick={() => setDisplayEpisodes(this.state.character.id)}
                     displayEpisodes={this.state.character.displayEpisodes}

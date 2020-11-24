@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { withRouter, NavLink as Link } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
-import querystring from 'query-string';
+// import querystring from 'query-string';
 import CharacterCard from './CharactersCard';
 import SearchBar from './SearchBar/SearchBar';
 import API from '../API';
@@ -17,7 +17,7 @@ class CharacterList extends Component {
     pageCount: '',
     // next:'',
     // prev:'',
-    //page:null,
+    // page:null,
   };
 
   // componentDidMount() {
@@ -51,7 +51,8 @@ class CharacterList extends Component {
   componentDidMount() {
     this.getCharacters();
   }
-  componentDidUpdate(){
+
+  componentDidUpdate() {
     window.scrollTo(230, 230);
   }
 
@@ -61,8 +62,8 @@ class CharacterList extends Component {
       // .get(`/character`)
 
       .then((response) => {
-        console.log(response.data)
-        console.log(this.props.match);
+        // console.log(response.data);
+        // console.log(this.props.match);
 
         // console.log(this.props.match.params)
         this.setState({
@@ -85,7 +86,7 @@ class CharacterList extends Component {
 
     handlePageClick = (event) => {
       const selectedPage = event.selected + 1;
-      console.log(selectedPage);
+      // console.log(selectedPage);
 
       this.setState({
         currentPage: selectedPage,
@@ -135,7 +136,7 @@ class CharacterList extends Component {
 
             ))}
           </CardGrid>
-          {/* <PageNumber>
+          <PageNumber>
             <ReactPaginate
               previousLabel="Prev"
               nextLabel="Next"
@@ -153,7 +154,7 @@ class CharacterList extends Component {
               subContainerClassName="pages pagination"
               activeClassName="active"
             />
-          </PageNumber> */}
+          </PageNumber>
         </div>
       );
     }
