@@ -1,27 +1,27 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
-import './Footer.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.css";
+import "./Footer.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faYoutube,
   faFacebook,
   faTwitter,
   faInstagram,
-} from '@fortawesome/free-brands-svg-icons';
+} from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => (
   <div
     className="row"
     style={{
-      color: '#000',
-      bottom: '0',
-      width: '100vw',
-      position: 'relative',
-      height: ' 175px',
-      display: 'flex',
-      justifyContent: 'center',
-      backgroundColor: 'whitesmoke',
-      marginTop: '40px',
+      color: "#000",
+      bottom: "0",
+      width: "100vw",
+      position: "relative",
+      height: " 175px",
+      display: "flex",
+      justifyContent: "center",
+      backgroundColor: "whitesmoke",
+      marginTop: "40px",
     }}
   >
     <div className="col-6 col-md-4 col-sm-12 text-center mt-2">
@@ -54,10 +54,18 @@ const Footer = () => (
         >
           <FontAwesomeIcon icon={faYoutube} size="2x" />
         </a>
-        <a href="" target="_blank" className="facebook social">
+        <a
+          href="https://github.com/HugoCravoMendes"
+          target="_blank"
+          className="facebook social"
+        >
           <FontAwesomeIcon icon={faFacebook} size="2x" />
         </a>
-        <a href="" target="_blank" className="twitter social">
+        <a
+          href="https://www.linkedin.com/in/lu%C3%ADs-clara-689822119"
+          target="_blank"
+          className="twitter social"
+        >
           <FontAwesomeIcon icon={faTwitter} size="2x" />
         </a>
         <a href="" className="instagram social">

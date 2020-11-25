@@ -16,15 +16,17 @@ class CharactersDetails extends Component {
   state = {
     character: [],
     episodes: [],
-    displayEpisodes: {},
-    // location:[],
-    // origin:[],
+    // displayEpisodes: {},
   };
 
   componentDidMount() {
     this.getCharacter();
     this.getEpisode();
   }
+
+  // componentDidUpdate(episodes) {
+  //   this.getEpisode(episodes);
+  // }
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
@@ -44,20 +46,18 @@ class CharactersDetails extends Component {
   getEpisode() {
     const currentCharacterId = Number(this.props.match.params.id);
     API.get(`/character/${currentCharacterId}`).then((response) => {
-      // console.log(typeof response.data.episode, response.data.episode),
+      console.log(typeof response.data.episode, response.data.episode),
       response.data.episode
         .map(
           (epi) =>
-            // console.log(typeof epi, epi)))
+          // console.log(typeof epi, epi)))
             epi.split('/episode/')[1],
         )
         .map((epi) => {
           console.log(epi);
-          <li key={epi}>{epi}</li>;
-          return epi;
-          this.setState({
-            episodes: epi,
-          });
+            <li key={epi}>{epi}</li>;
+
+            this.setState({ episodes: epi });
         });
     });
   }
@@ -132,7 +132,7 @@ class CharactersDetails extends Component {
               <Episodes>
                 <ul>
                   <p>Episodes:</p>
-                  <li>{this.state.episodes}</li>
+                  <li key={id + this.state.episodes}>{this.state.episodes}</li>
                   {/* {
                   [episode]
                     .map(
