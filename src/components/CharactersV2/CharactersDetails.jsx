@@ -1,20 +1,21 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/state-in-constructor */
-import React, { Component } from "react";
-import { NavLink as Link } from "react-router-dom";
-import ArrowBack from "@material-ui/icons/ArrowBack";
-import API from "../API";
+import React, { Component } from 'react';
+import { NavLink as Link } from 'react-router-dom';
+import ArrowBack from '@material-ui/icons/ArrowBack';
+import API from '../API';
 import {
   CardDetails,
   CardGridDetails,
   HeaderDetails,
   Container,
   Episodes,
-} from "./styles";
+} from './styles';
 
 class CharactersDetails extends Component {
   state = {
     character: [],
+    episodes: [],
     displayEpisodes: {},
     // location:[],
     // origin:[],
@@ -22,6 +23,7 @@ class CharactersDetails extends Component {
 
   componentDidMount() {
     this.getCharacter();
+    this.getEpisode();
   }
 
   componentDidUpdate(prevProps) {
@@ -32,30 +34,46 @@ class CharactersDetails extends Component {
 
   getCharacter() {
     const currentCharacterId = Number(this.props.match.params.id);
-    API.get(`/character/${currentCharacterId}`).then((response) => { 
-      console.log(typeof response.data.episode, response.data.episode),
-      response.data.episode.map(
-        (epi) => (
-          console.log(typeof epi, epi)))
-      // this.setState({
-      //   character: response.data,
-      // });
+    API.get(`/character/${currentCharacterId}`).then((response) => {
+      this.setState({
+        character: response.data,
+      });
     });
   }
 
-  // getEpisode(){
-
-  // }
-  // setDisplayEpisodes(id) {
-  //   this.getCharacter(
-  //     this.state.character.map((char) => (char.id === id
-  //       ? { ...char, displayEpisodes: !char.displayEpisodes }
-  //       : char)),
-  //   );
-  // }
+  getEpisode() {
+    const currentCharacterId = Number(this.props.match.params.id);
+    API.get(`/character/${currentCharacterId}`).then((response) => {
+      // console.log(typeof response.data.episode, response.data.episode),
+      response.data.episode
+        .map(
+          (epi) =>
+            // console.log(typeof epi, epi)))
+            epi.split('/episode/')[1],
+        )
+        .map((epi) => {
+          console.log(epi);
+          <li key={epi}>{epi}</li>;
+          return epi;
+          this.setState({
+            episodes: epi,
+          });
+        });
+    });
+  }
 
   render() {
-    const {name, image, id, episode, status, species, origin, location, gender}= this.state.character
+    const {
+      name,
+      image,
+      id,
+      episode,
+      status,
+      species,
+      origin,
+      location,
+      gender,
+    } = this.state.character;
     return (
       <div>
         <HeaderDetails>
@@ -84,48 +102,38 @@ class CharactersDetails extends Component {
                   {/* <h1>Name: {this.state.character.name}</h1> */}
                   <ul>
                     <li>
-                      <h3>Species:</h3>{" "}
-                      <span>
-                        {this.state.character && species}
-                      </span>
+                      <h3>Species:</h3>
+                      {' '}
+                      <span>{this.state.character && species}</span>
                     </li>
                     <li>
-                      <h3>Status:</h3>{" "}
-                      <span>
-                        {this.state.character && status}
-                      </span>
+                      <h3>Status:</h3>
+                      {' '}
+                      <span>{this.state.character && status}</span>
                     </li>
                     <li>
-                      <h3>Gender:</h3>{" "}
-                      <span>
-                        {this.state.character && gender}
-                      </span>
+                      <h3>Gender:</h3>
+                      {' '}
+                      <span>{this.state.character && gender}</span>
                     </li>
                     <li>
-                      <h3>Origin:</h3>{" "}
-                      <span>
-                        {origin &&
-                          origin.name}
-                      </span>
+                      <h3>Origin:</h3>
+                      {' '}
+                      <span>{origin && origin.name}</span>
                     </li>
                     <li>
-                      <h3>Location:</h3>{" "}
-                      <span>
-                        {location &&
-                          location.name}
-                      </span>
+                      <h3>Location:</h3>
+                      {' '}
+                      <span>{location && location.name}</span>
                     </li>
                   </ul>
                 </div>
               </div>
-              <Episodes 
-              // key={char.id}
-              // onClick={() => setDisplayEpisodes(char.id)}
-              // displayEpisodes={char.displayEpisodes}
-              >
+              <Episodes>
                 <ul>
                   <p>Episodes:</p>
-                  {
+                  <li>{this.state.episodes}</li>
+                  {/* {
                   [episode]
                     .map(
                       (epi) => (
@@ -139,9 +147,10 @@ class CharactersDetails extends Component {
                     ))
                     // .map((epi) => (
                     //   // console.log(epi)
-                    //   <li key={this.state.character.id + epi}>{epi}</li>
+                    //   <li key={this.state.character.id + this.state.episodes}>
+                    {this.state.episodes}</li>
                     // ))
-                  }
+                  } */}
                 </ul>
               </Episodes>
             </CardDetails>
