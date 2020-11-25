@@ -57,7 +57,7 @@ class CharactersDetails extends Component {
             //console.log(epi);
             //<li key={epi}>{epi}</li>;
 
-            this.setState({ episodes: epi });
+            this.setState({ episodes: [...this.state.episodes, epi] });
           });
     });
   }
@@ -123,15 +123,15 @@ class CharactersDetails extends Component {
               <Episodes>
                 <ul>
                   <p>Episodes:</p>
-                  
+
                   {/* <li key={id + episode}>{episodes}</li> */}
 
                   {episodes &&
-                  [episodes]
+                  episodes
                      .map((epi) => (
                        console.log(epi),
-                    <li key={id + episodes}>
-                    {episodes}
+                    <li key={id + epi}>
+                    {epi}
                     </li>
                      ))
                   }

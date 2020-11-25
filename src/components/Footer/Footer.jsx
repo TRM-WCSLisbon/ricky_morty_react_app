@@ -17,7 +17,7 @@ const Footer = () => (
       bottom: "0",
       width: "100vw",
       position: "relative",
-      height: "100vh",
+      height: " 175px",
       display: "flex",
       justifyContent: "center",
       backgroundColor: "whitesmoke",
