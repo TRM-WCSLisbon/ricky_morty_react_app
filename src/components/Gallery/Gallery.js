@@ -34,7 +34,7 @@ function Gallery() {
         </span>
       </Header>
       <CardGrid>
-        <Link to="/characters?page=1" select>
+        <Link to="/characters" select>
           <div id="container">
             <img src={char} alt="characters" />
             <div id="middle">

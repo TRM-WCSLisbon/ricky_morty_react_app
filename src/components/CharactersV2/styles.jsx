@@ -84,20 +84,20 @@ export const Card = styled.div`
     border-radius: 7px;
   }
 
-  // ul {
-  //   opacity: ${(props) => (props.displayEpisodes ? 1 : 0)};
-  //   top: 0;
-  //   right: 0;
-  //   height: 82%;
-  //   width: 98%;
-  //   position: absolute;
-  //   overflow-y: ${(props) => (props.displayEpisodes ? "auto" : "hidden")};
-  //   transition: opacity 150ms ease-in-out;
+  ul {
+    opacity: ${(props) => (props.displayEpisodes ? 1 : 0)};
+    top: 0;
+    right: 0;
+    height: 82%;
+    width: 98%;
+    position: absolute;
+    overflow-y: ${(props) => (props.displayEpisodes ? "auto" : "hidden")};
+    transition: opacity 150ms ease-in-out;
 
-  //   &::-webkit-scrollbar {
-  //     display: none;
-  //   }
-  //}
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 
     li {
       font-weight: bold;
@@ -330,7 +330,7 @@ export const CardDetails = styled.div`
 export const CardGridDetails = styled.ul`
   display: ${({ loading }) => (loading ? "block" : "grid")};
   grid-template-columns: repeat(auto-fit, minmax(1fr));
-  width:800px;
+  width:750px;
   height:550px;
   margin: 20px 50px;
   grid-gap: 25px;
@@ -341,7 +341,43 @@ export const CardGridDetails = styled.ul`
   justify-content: center;
   align-items: center;
 `;
+export const Episodes = styled.div`
+ul {
+  //opacity: ${props => (props.displayEpisodes ? 1 : 0)};
+  top: 69%;
+  right: 0;
+  height: 82%;
+  width: 98%;
+  position: absolute;
+  overflow-y: ${props => (props.displayEpisodes ? 'auto' : 'hidden')};
+  transition: opacity 150ms ease-in-out;
 
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  p {
+    background: #7159c1;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px 2px 5px 2px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+
+  li {
+    background: #7159c1;
+    font-weight: bold;
+    width: 9%;
+    border-radius: 50%;
+    margin: 2px;
+    padding: 5px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+`;
 export const PageNumber = styled.li`
   // color: ${({ actualPage }) => (actualPage ? "#21d8ff" : "#000")};
 
