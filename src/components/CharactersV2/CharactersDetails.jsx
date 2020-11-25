@@ -1,16 +1,16 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/state-in-constructor */
-import React, { Component } from 'react';
-import { NavLink as Link } from 'react-router-dom';
-import ArrowBack from '@material-ui/icons/ArrowBack';
-import API from '../API';
+import React, { Component } from "react";
+import { NavLink as Link } from "react-router-dom";
+import ArrowBack from "@material-ui/icons/ArrowBack";
+import API from "../API";
 import {
   CardDetails,
   CardGridDetails,
   HeaderDetails,
   Container,
   Episodes,
-} from './styles';
+} from "./styles";
 
 class CharactersDetails extends Component {
   state = {
@@ -47,18 +47,18 @@ class CharactersDetails extends Component {
     const currentCharacterId = Number(this.props.match.params.id);
     API.get(`/character/${currentCharacterId}`).then((response) => {
       console.log(typeof response.data.episode, response.data.episode),
-      response.data.episode
-        .map(
-          (epi) =>
-          // console.log(typeof epi, epi)))
-            epi.split('/episode/')[1],
-        )
-        .map((epi) => {
-          console.log(epi);
-            <li key={epi}>{epi}</li>;
+        response.data.episode
+          .map(
+            (epi) =>
+              // console.log(typeof epi, epi)))
+              epi.split("/episode/")[1]
+          )
+          .map((epi) => {
+            //console.log(epi);
+            //<li key={epi}>{epi}</li>;
 
             this.setState({ episodes: epi });
-        });
+          });
     });
   }
 
@@ -74,6 +74,9 @@ class CharactersDetails extends Component {
       location,
       gender,
     } = this.state.character;
+
+    const { episodes, character } = this.state;
+
     return (
       <div>
         <HeaderDetails>
@@ -84,7 +87,7 @@ class CharactersDetails extends Component {
               </Link>
             </div>
             {/* <h1>Character Details</h1> */}
-            <h1>{this.state.character && name}</h1>
+            <h1>{character && name}</h1>
           </header>
         </HeaderDetails>
 
@@ -93,37 +96,25 @@ class CharactersDetails extends Component {
             <CardDetails>
               <div>
                 <div className="column-left">
-                  <img
-                    src={this.state.character && image}
-                    alt={this.state.character && name}
-                  />
+                  <img src={character && image} alt={character && name} />
                 </div>
                 <div className="column-right">
                   {/* <h1>Name: {this.state.character.name}</h1> */}
                   <ul>
                     <li>
-                      <h3>Species:</h3>
-                      {' '}
-                      <span>{this.state.character && species}</span>
+                      <h3>Species:</h3> <span>{character && species}</span>
                     </li>
                     <li>
-                      <h3>Status:</h3>
-                      {' '}
-                      <span>{this.state.character && status}</span>
+                      <h3>Status:</h3> <span>{character && status}</span>
                     </li>
                     <li>
-                      <h3>Gender:</h3>
-                      {' '}
-                      <span>{this.state.character && gender}</span>
+                      <h3>Gender:</h3> <span>{character && gender}</span>
                     </li>
                     <li>
-                      <h3>Origin:</h3>
-                      {' '}
-                      <span>{origin && origin.name}</span>
+                      <h3>Origin:</h3> <span>{origin && origin.name}</span>
                     </li>
                     <li>
-                      <h3>Location:</h3>
-                      {' '}
+                      <h3>Location:</h3>{" "}
                       <span>{location && location.name}</span>
                     </li>
                   </ul>
@@ -132,25 +123,18 @@ class CharactersDetails extends Component {
               <Episodes>
                 <ul>
                   <p>Episodes:</p>
-                  <li key={id + this.state.episodes}>{this.state.episodes}</li>
-                  {/* {
-                  [episode]
-                    .map(
-                      (epi) => (
-                        console.log(typeof epi, epi)
-                      // {
-                      //   for(let i = 0; i < [epi].length; i++){
-                      //     console.log(epi, String(epi).split("/episode/")[1])
-                      //   }
-                      // }
-                        //console.log(String(epi).split("/episode/")[1]),
-                    ))
-                    // .map((epi) => (
-                    //   // console.log(epi)
-                    //   <li key={this.state.character.id + this.state.episodes}>
-                    {this.state.episodes}</li>
-                    // ))
-                  } */}
+                  
+                  {/* <li key={id + episode}>{episodes}</li> */}
+
+                  {episodes &&
+                  [episodes]
+                     .map((epi) => (
+                       console.log(epi),
+                    <li key={id + episodes}>
+                    {episodes}
+                    </li>
+                     ))
+                  }
                 </ul>
               </Episodes>
             </CardDetails>

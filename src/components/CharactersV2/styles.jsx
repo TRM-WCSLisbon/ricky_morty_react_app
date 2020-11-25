@@ -61,7 +61,6 @@ export const Header = styled.div`
 `;
 
 export const Card = styled.div`
-
   color: #fff;
   background: #7d12ff;
   margin: 10px;
@@ -72,7 +71,7 @@ export const Card = styled.div`
   background-color: transparent;
   height: 308px;
   perspective: 1000px;
-  
+
   backdrop-filter: blur(5px);
   border: 4px solid #ab20fd;
   box-shadow: 0 10px 25px #ab20fd;
@@ -84,49 +83,35 @@ export const Card = styled.div`
     border-radius: 7px;
   }
 
-  ul {
-    opacity: ${(props) => (props.displayEpisodes ? 1 : 0)};
-    top: 0;
-    right: 0;
-    height: 82%;
-    width: 98%;
-    position: absolute;
-    overflow-y: ${(props) => (props.displayEpisodes ? "auto" : "hidden")};
-    transition: opacity 150ms ease-in-out;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
+  li {
+    font-weight: bold;
+    width: 100%;
+    border-radius: 20%;
+    margin: 2px;
+    padding: 5px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(47, 53, 49, 0.12),
+      0 1px 2px rgba(47, 53, 49, 0.24);
   }
-
-    li {
-      font-weight: bold;
-      width: 100%;
-      border-radius: 20%;
-      margin: 2px;
-      padding: 5px;
-      text-align: center;
-      box-shadow: 0 1px 3px rgba(47,53,49, 0.12), 0 1px 2px rgba(47, 53, 49, 0.24);
-    }
   .card {
     cursor: pointer;
     background-color: transparent;
     height: 300px;
     perspective: 1000px;
   }
-  
+
   .card h3 {
-    font-size: 1.2em;
+    font-size: 1em;
     margin-bottom: 10px;
   }
   .card span {
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: bold;
     border-bottom: 1px #fff solid;
     padding-bottom: 10px;
     margin-bottom: 10px;
   }
-  .card .shadow-alive{
+  .card .shadow-alive {
     padding: 1em;
     border-radius: 5px;
     display: flex;
@@ -134,7 +119,7 @@ export const Card = styled.div`
     box-shadow: 2px 3px 2px 2px #aed581;
   }
 
-  .card .shadow-dead{
+  .card .shadow-dead {
     padding: 1em;
     border-radius: 5px;
     display: flex;
@@ -145,7 +130,7 @@ export const Card = styled.div`
     width: 100%;
     object-fit: cover;
   }
-  
+
   .card-inner {
     position: relative;
     width: 100%;
@@ -153,11 +138,11 @@ export const Card = styled.div`
     transition: transform 0.8s;
     transform-style: preserve-3d;
   }
-  
+
   .card:hover .card-inner {
     transform: rotateY(180deg);
   }
-  
+
   .card-front,
   .card-back {
     position: absolute;
@@ -166,7 +151,7 @@ export const Card = styled.div`
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
-  
+
   .card-back {
     background-color: #333;
     border-radius: 7px;
@@ -174,8 +159,9 @@ export const Card = styled.div`
     padding: 20px;
     transform: rotateY(180deg);
   }
-  
+
   .card li {
+    margin-top:-3.5px;
     list-style: none;
     padding-bottom: 10px;
   }
@@ -185,7 +171,6 @@ export const CardGrid = styled.ul`
   grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
   margin: 0 60px;
   grid-gap: 25px;
-  
 `;
 
 export const HeaderDetails = styled.div`
@@ -257,10 +242,10 @@ export const HeaderDetails = styled.div`
   }
 `;
 export const Container = styled.div`
-  display:grid;
+  display: grid;
   justify-content: center;
   align-items: center;
-  margin-top:-50px;
+  margin-top: -50px;
 `;
 export const CardDetails = styled.div`
   color: #fff;
@@ -269,11 +254,10 @@ export const CardDetails = styled.div`
   border-radius: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  cursor: pointer;
   background-color: transparent;
   height: 500px;
   width: 700px;
-  display:grid;
+  display: grid;
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(5px);
@@ -302,36 +286,35 @@ export const CardDetails = styled.div`
   //   }
   // }
 
-    li {
-      font-size:1em;
-      font-weight: bold;
-      border-radius: 20%;
-      margin: 5px;
-      margin-top: 10px;
-      padding: 5px;
-      text-align: center;
-      box-shadow: 0 1px 3px rgba(47,53,49, 0.12), 0 1px 2px rgba(47, 53, 49, 0.24);
-    }
-  
-  .column-left{
-    float: left;
-    margin: -20px 20px 10px -20px;
+  li {
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 20%;
+    margin: 5px;
+    margin-top: 10px;
+    padding: 5px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(47, 53, 49, 0.12),
+      0 1px 2px rgba(47, 53, 49, 0.24);
+  }
 
+  .column-left {
+    float: left;
+    margin: 0px 20px 10px -20px;
   }
-  .column-right{
+  .column-right {
     float: right;
-    margin: -30px -20px 0 10px;
+    margin: -20px -20px 0 10px;
   }
-  .Episodes{
-  
+  .Episodes {
   }
 `;
 
 export const CardGridDetails = styled.ul`
   display: ${({ loading }) => (loading ? "block" : "grid")};
   grid-template-columns: repeat(auto-fit, minmax(1fr));
-  width:750px;
-  height:550px;
+  width: 750px;
+  height: 550px;
   margin: 20px 50px;
   grid-gap: 25px;
   background-color: #333;
@@ -343,13 +326,13 @@ export const CardGridDetails = styled.ul`
 `;
 export const Episodes = styled.div`
 ul {
-  //opacity: ${props => (props.displayEpisodes ? 1 : 0)};
+  //opacity: ${(props) => (props.displayEpisodes ? 1 : 0)};
   top: 69%;
   right: 0;
   height: 82%;
   width: 98%;
   position: absolute;
-  overflow-y: ${props => (props.displayEpisodes ? 'auto' : 'hidden')};
+  overflow-y: ${(props) => (props.displayEpisodes ? "auto" : "hidden")};
   transition: opacity 150ms ease-in-out;
 
   &::-webkit-scrollbar {
@@ -380,6 +363,7 @@ ul {
 `;
 export const PageNumber = styled.li`
   // color: ${({ actualPage }) => (actualPage ? "#21d8ff" : "#000")};
+  list-style: none;
 
   .pagination {
     margin: 10px;
@@ -389,35 +373,43 @@ export const PageNumber = styled.li`
     list-style: none;
     outline: none;
     margin-bottom: 30px;
-    margin-right:130px;
-
+    margin-right: 130px;
   }
-  .pagination > .active > a{
-    background-color: #21d8ff ;
-    border-color: #21d8ff ;
+
+  .pagination > .active > a {
+    background-color: #21d8ff;
+    border-color: #21d8ff;
     color: #fff;
-
   }
-  .pagination > li > a{
+
+  .pagination > li > a {
     font-size: 1.5em;
-    border: 1px solid #59B4A1 ;
+    border: 1px solid #59b4a1;
     padding: 5px 10px;
     outline: none;
     cursor: pointer;
     font-weight: bold;
   }
-  .pagination > li > span{
-  }
-  .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
-    background-color: #59B4A1 ;
+
+  .pagination > .active > a,
+  .pagination > .active > span,
+  .pagination > .active > a:hover,
+  .pagination > .active > span:hover,
+  .pagination > .active > a:focus,
+  .pagination > .active > span:focus {
+    background-color: #59b4a1;
     border-color: #ab20fd;
-    outline: none ;
+    outline: none;
   }
-  .pagination > li > a, .pagination > li > span{
-    color: #000
+  .pagination > li > a,
+  .pagination > li > span {
+    color: #000;
   }
-  .pagination > li:first-child > a, .pagination > li:first-child > span, .pagination > li:last-child > a, .pagination > li:last-child > span{
-    border-radius: unset
+  .pagination > li:first-child > a,
+  .pagination > li:first-child > span,
+  .pagination > li:last-child > a,
+  .pagination > li:last-child > span {
+    border-radius: unset;
   }
 `;
 
