@@ -32,13 +32,20 @@ class CharactersDetails extends Component {
 
   getCharacter() {
     const currentCharacterId = Number(this.props.match.params.id);
-    API.get(`/character/${currentCharacterId}`).then((response) => {
-      this.setState({
-        character: response.data,
-      });
+    API.get(`/character/${currentCharacterId}`).then((response) => { 
+      console.log(typeof response.data.episode, response.data.episode),
+      response.data.episode.map(
+        (epi) => (
+          console.log(typeof epi, epi)))
+      // this.setState({
+      //   character: response.data,
+      // });
     });
   }
 
+  // getEpisode(){
+
+  // }
   // setDisplayEpisodes(id) {
   //   this.getCharacter(
   //     this.state.character.map((char) => (char.id === id
@@ -48,6 +55,7 @@ class CharactersDetails extends Component {
   // }
 
   render() {
+    const {name, image, id, episode, status, species, origin, location, gender}= this.state.character
     return (
       <div>
         <HeaderDetails>
@@ -58,7 +66,7 @@ class CharactersDetails extends Component {
               </Link>
             </div>
             {/* <h1>Character Details</h1> */}
-            <h1>{this.state.character && this.state.character.name}</h1>
+            <h1>{this.state.character && name}</h1>
           </header>
         </HeaderDetails>
 
@@ -68,8 +76,8 @@ class CharactersDetails extends Component {
               <div>
                 <div className="column-left">
                   <img
-                    src={this.state.character && this.state.character.image}
-                    alt={this.state.character && this.state.character.name}
+                    src={this.state.character && image}
+                    alt={this.state.character && name}
                   />
                 </div>
                 <div className="column-right">
@@ -78,51 +86,62 @@ class CharactersDetails extends Component {
                     <li>
                       <h3>Species:</h3>{" "}
                       <span>
-                        {this.state.character && this.state.character.species}
+                        {this.state.character && species}
                       </span>
                     </li>
                     <li>
                       <h3>Status:</h3>{" "}
                       <span>
-                        {this.state.character && this.state.character.status}
+                        {this.state.character && status}
                       </span>
                     </li>
                     <li>
                       <h3>Gender:</h3>{" "}
                       <span>
-                        {this.state.character && this.state.character.gender}
+                        {this.state.character && gender}
                       </span>
                     </li>
                     <li>
                       <h3>Origin:</h3>{" "}
                       <span>
-                        {this.state.character.origin &&
-                          this.state.character.origin.name}
+                        {origin &&
+                          origin.name}
                       </span>
                     </li>
                     <li>
                       <h3>Location:</h3>{" "}
                       <span>
-                        {this.state.character.location &&
-                          this.state.character.location.name}
+                        {location &&
+                          location.name}
                       </span>
                     </li>
                   </ul>
                 </div>
               </div>
-              <Episodes>
+              <Episodes 
+              // key={char.id}
+              // onClick={() => setDisplayEpisodes(char.id)}
+              // displayEpisodes={char.displayEpisodes}
+              >
                 <ul>
                   <p>Episodes:</p>
-                  {[this.state.character.episode]
+                  {
+                  [episode]
                     .map(
-                      (epi) =>
-                        // console.log(typeof epi, epi, String(epi))
-                        String(epi).split("/episode/")[1]
-                    )
-                    .map((epi) => (
-                      // console.log(epi)
-                      <li key={this.state.character.id + epi}>{epi}</li>
-                    ))}
+                      (epi) => (
+                        console.log(typeof epi, epi)
+                      // {
+                      //   for(let i = 0; i < [epi].length; i++){
+                      //     console.log(epi, String(epi).split("/episode/")[1])
+                      //   }
+                      // }
+                        //console.log(String(epi).split("/episode/")[1]),
+                    ))
+                    // .map((epi) => (
+                    //   // console.log(epi)
+                    //   <li key={this.state.character.id + epi}>{epi}</li>
+                    // ))
+                  }
                 </ul>
               </Episodes>
             </CardDetails>

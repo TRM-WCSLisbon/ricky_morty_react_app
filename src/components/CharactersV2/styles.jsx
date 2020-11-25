@@ -320,7 +320,7 @@ export const CardDetails = styled.div`
   }
   .column-right{
     float: right;
-    margin: -40px -20px 0 10px;
+    margin: -30px -20px 0 10px;
   }
   .Episodes{
   
