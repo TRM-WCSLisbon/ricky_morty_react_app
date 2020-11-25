@@ -31,17 +31,20 @@ class EpisodesDetails extends React.Component {
   };
 
   render() {
-    console.log(this.state.episode);
+    // console.log(this.state.episode);
     return (
       <div>
-        <p>ID: {this.state.episode.id}</p>
-        <p>Name: {this.state.episode.name}</p>
-        <p>Episode: {this.state.episode.episode}</p>
-        <p>Created: {this.state.episode.created}</p>
-        <p>URL: {this.state.episode.url}</p>
+        <img
+          src={EpisodeImg}
+          alt={this.state.episode && this.state.episode.name}
+        />
+        <p>Name: {this.state.episode && this.state.episode.name}</p>
+        {/* <p>Episode: {this.state.episode && this.state.episode.episode}</p>
+        <p>Created: {this.state.episode && this.state.episode.created}</p>
+        <p>URL: {this.state.episode && this.state.episode.url}</p>
         <button>
           <Link to="/episodes">Return to Episodes</Link>
-        </button>
+        </button> */}
       </div>
     );
   }
