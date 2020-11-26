@@ -1,11 +1,11 @@
 import React from 'react';
 import { NavLink as Link } from 'react-router-dom';
-import { Nav, Background } from './styles';
+import { Background } from './styles';
 
 const NavBar = () => (
   <Link exact to="/" select>
     <Background>
-      <Nav>
+      <nav>
         <ul id="left">
           <li>
             <Link to="/characters/" select>
@@ -30,7 +30,7 @@ const NavBar = () => (
             </Link>
           </li>
         </ul>
-      </Nav>
+      </nav>
     </Background>
   </Link>
 );
