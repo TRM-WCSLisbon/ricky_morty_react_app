@@ -18,6 +18,7 @@ const SignupSchema = yup.object().shape({
     .max(420, 'You must be at most 420 years'),
   email: yup.string().required(),
   gender: yup.string().required(),
+  subject: yup.string().required(),
 });
 
 function ContactForm() {
@@ -66,6 +67,14 @@ function ContactForm() {
           <label>E-mail</label>
           <input type="email" name="email" ref={register} />
           {errors.email && <p>{errors.email.message}</p>}
+        </div>
+        <div style={{ marginBottom: 0 }}>
+          <label>Subject</label>
+          <select name="subject" ref={register} style={{ marginLeft: 5 }}>
+            <option value="">Select the Subject</option>
+            <option value="Collaborator">Be a Collaborator</option>
+            <option value="Bug">Report a bug</option>
+          </select>
         </div>
         {/* <label>Subject</label> */}
         {/* <Controller
