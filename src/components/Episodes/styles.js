@@ -357,3 +357,38 @@ export const CardGridDetails = styled.ul`
   justify-content: center;
   align-items: center;
 `;
+
+export const Characters = styled.div`
+ul {
+  //opacity: ${(props) => (props.displayEpisodes ? 1 : 0)};
+  top: 69%;
+  right: 0;
+  height: 82%;
+  width: 98%;
+  position: absolute;
+  overflow-y: ${(props) => (props.displayEpisodes ? "auto" : "hidden")};
+  transition: opacity 150ms ease-in-out;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  p {
+    background: #7159c1;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px 2px 5px 2px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+  li {
+    background: #7159c1;
+    font-weight: bold;
+    width: 9%;
+    border-radius: 50%;
+    margin: 2px;
+    padding: 5px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+`;
