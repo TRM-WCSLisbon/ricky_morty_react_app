@@ -52,7 +52,7 @@ function ContactForm() {
           <label>Age</label>
           <input name="age" type="number" ref={register} />
           {errors.age && (
-            <p>You Must be older then 16 and younger then 420 years old!!</p>
+            <p>You Must be older then 16 to see this TV series xD and younger then 420 years old!!</p>
           )}
         </div>
         <div style={{ marginBottom: 0 }}>

@@ -20,17 +20,16 @@ class CharactersDetails extends Component {
   state = {
     character: [],
     episodes: [],
-    // displayEpisodes: {},
+    originId: [],
+    locationId: [],
   };
 
   componentDidMount() {
     this.getCharacter();
     this.getEpisode();
+    this.getOrigin();
+    this.getLocation();
   }
-
-  // componentDidUpdate(episodes) {
-  //   this.getEpisode(episodes);
-  // }
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
@@ -54,14 +53,40 @@ class CharactersDetails extends Component {
       response.data.episode
         .map(
           (epi) =>
-          // console.log(typeof epi, epi)))
             epi.split('/episode/')[1],
         )
         .map((epi) => {
-          // console.log(epi);
-          // <li key={epi}>{epi}</li>;
-
           this.setState({ episodes: [...this.state.episodes, epi] });
+        });
+    });
+  }
+
+  getLocation() {
+    const currentCharacterId = Number(this.props.match.params.id);
+    API.get(`/character/${currentCharacterId}`).then((response) => {
+      // console.log(typeof response.data.episode, response.data.episode),
+      [response.data.location.url]
+        .map(
+          (loc) =>
+            loc.split('/location/')[1],
+        )
+        .map((loc) => {
+          this.setState({ locationId: [...this.state.locationId, loc] });
+        });
+    });
+  }
+
+  getOrigin() {
+    const currentCharacterId = Number(this.props.match.params.id);
+    API.get(`/character/${currentCharacterId}`).then((response) => {
+      // console.log(typeof response.data.episode, response.data.episode),
+      [response.data.origin.url]
+        .map(
+          (ori) =>
+            ori.split('/location/')[1],
+        )
+        .map((ori) => {
+          this.setState({ originId: [...this.state.originId, ori] });
         });
     });
   }
@@ -78,7 +103,7 @@ class CharactersDetails extends Component {
       gender,
     } = this.state.character;
 
-    const { episodes, character } = this.state;
+    const { episodes, character, locationId, originId } = this.state;
 
     return (
       <div>
@@ -89,7 +114,6 @@ class CharactersDetails extends Component {
                 <ArrowBack style={{ fontSize: 60 }} />
               </Link>
             </div>
-            {/* <h1>Character Details</h1> */}
             <h1>{character && name}</h1>
           </header>
         </HeaderDetails>
@@ -102,7 +126,6 @@ class CharactersDetails extends Component {
                   <img src={character && image} alt={character && name} />
                 </div>
                 <div className="column-right">
-                  {/* <h1>Name: {this.state.character.name}</h1> */}
                   <ul>
                     <li>
                       <h3>Species:</h3>
@@ -122,14 +145,14 @@ class CharactersDetails extends Component {
                     <li>
                       <h3>Origin:</h3>
                       {' '}
-                      <Link to={`/location/${origin && origin.name}`}>
+                      <Link to={`/location/${originId}`}>
                         <span>{origin && origin.name}</span>
                       </Link>
                     </li>
                     <li>
                       <h3>Location:</h3>
                       {' '}
-                      <Link to={`/location/${location}`}>
+                      <Link to={`/location/${locationId}`}>
                         <span>{location && location.name}</span>
                       </Link>
                     </li>
@@ -139,13 +162,9 @@ class CharactersDetails extends Component {
               <Episodes>
                 <ul>
                   <p>Episodes:</p>
-
-                  {/* <li key={id + episode}>{episodes}</li> */}
-
                   {episodes
                     && episodes.map(
                       (epi) => (
-                        //  console.log(epi),
                         (<Link to={`/episode/${epi}`}><li key={id + epi}>{epi}</li></Link>)
                       ),
                     )}

@@ -91,7 +91,7 @@ const RightNav = ({ open }) => (
         </Link>
       </li>
       <li>
-        <Link to="/contact" select>
+        <Link to="/contactus" select>
           Contact Us
         </Link>
       </li>

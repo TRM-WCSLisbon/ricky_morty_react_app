@@ -266,26 +266,13 @@ export const CardDetails = styled.div`
   box-shadow: 0 10px 25px #ab20fd;
 
   img {
+    // position:absolute;
+    // z-index:-1;
     width: 300px;
     height: 300px;
     object-fit: cover;
     border-radius: 7px;
   }
-
-  // ul {
-  //   opacity: ${(props) => (props.displayEpisodes ? 1 : 0)};
-  //   top: 0;
-  //   right: 0;
-  //   height: 82%;
-  //   width: 98%;
-  //   position: absolute;
-  //   overflow-y: ${(props) => (props.displayEpisodes ? 'auto' : 'hidden')};
-  //   transition: opacity 150ms ease-in-out;
-
-  //   &::-webkit-scrollbar {
-  //     display: none;
-  //   }
-  // }
 
   li {
     font-size: 1em;
@@ -301,13 +288,11 @@ export const CardDetails = styled.div`
 
   .column-left {
     float: left;
-    margin: 0px 20px 10px -20px;
+    margin: 40px 20px 10px -10px;
   }
   .column-right {
     float: right;
     margin: -20px -20px 0 10px;
-  }
-  .Episodes {
   }
 `;
 
@@ -324,13 +309,18 @@ export const CardGridDetails = styled.ul`
   padding: 20px;
   justify-content: center;
   align-items: center;
+
+  a{
+    text-decoration: none;
+    color: #fff;
+  }
 `;
 export const Episodes = styled.div`
 ul {
-  top: 0;
-  right: 0;
+  top: 2%;
+  left: 2%;
   height: 82%;
-  width: 98%;
+  width: 50%;
   position: absolute;
   overflow-y: ${('auto' ? 'auto' : 'hidden')};
   transition: opacity 150ms ease-in-out;

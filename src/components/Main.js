@@ -13,7 +13,7 @@ const Main = () => (
       <Route path="/characters" component={Characters} />
       <Route path="/locations" component={Locations} />
       <Route path="/episodes" component={Episodes} />
-      <Route path="/contact" component={ContactForm} />
+      <Route path="/contactus" component={ContactForm} />
     </Switch>
   </main>
 );

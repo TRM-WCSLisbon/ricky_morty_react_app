@@ -58,7 +58,7 @@ function Gallery() {
             </div>
           </div>
         </Link>
-        <Link to="/contact" select>
+        <Link to="/contactus" select>
           <div id="container">
             <img src={cont} alt="contact" />
             <div id="middle">
