@@ -1,6 +1,6 @@
 import React from "react";
-import API from "../API";
 import { Link } from "react-router-dom";
+import API from "../API";
 import {
   HeaderDetails,
   Container,
@@ -35,7 +35,7 @@ class EpisodesDetails extends React.Component {
   getEpisode = () => {
     const episodeId = Number(this.props.match.params.id);
     // console.log(this.props);
-    console.log(episodeId);
+    // console.log(episodeId);
     API.get(`/episode/${episodeId}`).then(
       (response) => this.setState({ episode: response.data })
       // console.log(this.state.episode)
@@ -93,7 +93,7 @@ class EpisodesDetails extends React.Component {
                     alt={this.state.episode && this.state.episode.name}
                   />
                   <button>
-                    <Link to={`/episodes?page=1`}>Go to Episode List</Link>
+                    <Link to="/episodes?page=1">Go to Episode List</Link>
                   </button>
                 </div>
                 <div className="column-right">

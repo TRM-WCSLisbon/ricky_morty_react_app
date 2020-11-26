@@ -3,8 +3,10 @@ import { Link, withRouter } from "react-router-dom";
 import querystring from "query-string";
 import API from "../API";
 import { CardGrid, Card, Header, PageNumber } from "./styles";
-import EpisodeImg from "./image.png";
-
+import Season1 from "./season1.jpg";
+import Season2 from "./season2.jpg";
+import Season3 from "./season3.jpg";
+import Season4 from "./season4.jpg";
 class EpisodesList extends React.Component {
   constructor(props) {
     super(props);
@@ -43,6 +45,23 @@ class EpisodesList extends React.Component {
     );
   }
 
+  returnEpisodesImage = (season) => {
+    console.log(season);
+    switch (true) {
+      case season.includes("S01"):
+        return Season1;
+        break;
+      case season.includes("S02"):
+        return Season2;
+        break;
+      case season.includes("S03"):
+        return Season3;
+        break;
+      default:
+        return Season4;
+    }
+  };
+
   render() {
     return (
       <>
@@ -60,7 +79,13 @@ class EpisodesList extends React.Component {
                     <div className="card-front">
                       <div className="card-back">
                         <ul>
-                          <img src={EpisodeImg} alt={episode.name} />
+                          <img
+                            src={
+                              episode.episode &&
+                              this.returnEpisodesImage(episode.episode)
+                            }
+                            alt={episode.name}
+                          />
                           <li>
                             <span>{episode.id}</span>
                           </li>
