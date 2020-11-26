@@ -13,6 +13,7 @@ import {
   Container,
   CardGridDetails,
   CardDetails,
+  Characters,
 } from './styles';
 // import EpisodeImg from "./image.png";
 import Season1 from './season1.jpg';
@@ -127,21 +128,23 @@ class EpisodesDetails extends React.Component {
                         {this.state.episode && this.state.episode.created}
                       </span>
                     </li>
-                    <li>
-                      <h3>Characters: </h3>
-                      {' '}
-                      <span>
-                        {this.state.character
-                          && this.state.character.map((char) => (
-                            <li>
-                              <Link to={`/episodes/${char}`}>{char}</Link>
-                            </li>
-                          ))}
-                      </span>
-                    </li>
                   </ul>
                 </div>
               </div>
+              <Characters>
+                <ul>
+                  <p>Characters: </p>
+                  {' '}
+                  <span>
+                    {this.state.character
+                          && this.state.character.map((char) => (
+                            <li>
+                              <Link to={`/characters/${char}`}>{char}</Link>
+                            </li>
+                          ))}
+                  </span>
+                </ul>
+              </Characters>
             </CardDetails>
           </CardGridDetails>
         </Container>

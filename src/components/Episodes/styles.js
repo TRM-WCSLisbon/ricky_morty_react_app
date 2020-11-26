@@ -1,3 +1,4 @@
+/* eslint-disable no-constant-condition */
 import styled, { keyframes } from 'styled-components';
 import HeaderFont from '../get_schwifty.ttf';
 
@@ -210,63 +211,72 @@ export const Spinner = styled.div`
 `;
 
 export const HeaderDetails = styled.div`
-  @font-face {
-    font-family: "get_schwifty";
-    src: local("get_schwifty"), url(${HeaderFont}) format("truetype");
-  }
+@font-face {
+  font-family: "get_schwifty";
+  src: local("get_schwifty"), url(${HeaderFont}) format("truetype");
+}
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+padding: 50px 50px 30px;
+
+header {
+  margin: 10px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 50px 50px 30px;
-  header {
-    margin: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    //user-select: none;
+  //user-select: none;
+
+  @media only screen and (max-width: 600px) {
+    margin-top: -30px;
+  }
+
+  h1 {
+    font: 5em "get_schwifty";
+    -webkit-text-stroke: 1px #f5f5f5;
+    color: #21d8ff;
+
     @media only screen and (max-width: 600px) {
-      margin-top: -30px;
-    }
-    h1 {
-      font: 5em "get_schwifty";
-      -webkit-text-stroke: 1px #f5f5f5;
-      color: #21d8ff;
-      @media only screen and (max-width: 600px) {
-        text-align: center;
-        font-size: 2.5em;
-      }
+      text-align: center;
+      font-size: 2.5em;
     }
   }
-  .IconBack {
-    margin-bottom: 20px;
-    height: 22px;
-    //width: 100%;
-    position: relative;
-    margin-right: 50px;
-  }
-  ul {
-    display: flex;
-    font-size: 1.5em;
-    margin-top: 5px;
-    a {
-      text-decoration: none;
-      :first-child,
-      :last-child {
-        color: inherit;
-      }
-      li {
-        padding: 0 10px;
-        cursor: pointer;
-        transition: color 100ms ease-in-out;
-        :hover {
-          @media only screen and (min-width: 600px) {
-            color: #21d8ff;
-          }
+}
+.IconBack {
+  margin-bottom: 20px;
+  height: 22px;
+  //width: 100%;
+  position: relative;
+  margin-right: 50px;
+}
+ul {
+  display: flex;
+  font-size: 1.5em;
+  margin-top: 5px;
+
+  a {
+    text-decoration: none;
+
+    :first-child,
+    :last-child {
+      color: inherit;
+    }
+
+    li {
+      padding: 0 10px;
+      cursor: pointer;
+      transition: color 100ms ease-in-out;
+
+      :hover {
+        @media only screen and (min-width: 600px) {
+          color: #21d8ff;
         }
       }
     }
   }
+}
 `;
 export const Container = styled.div`
   display: grid;
@@ -349,13 +359,12 @@ export const CardGridDetails = styled.ul`
 
 export const Characters = styled.div`
 ul {
-  //opacity: ${(props) => (props.displayEpisodes ? 1 : 0)};
-  top: 69%;
-  right: 0;
+  top: 2%;
+  left: 2%;
   height: 82%;
-  width: 98%;
+  width: 50%;
   position: absolute;
-  overflow-y: ${(props) => (props.displayEpisodes ? 'auto' : 'hidden')};
+  overflow-y: ${'auto' ? 'auto' : 'hidden'};
   transition: opacity 150ms ease-in-out;
   &::-webkit-scrollbar {
     display: none;
@@ -379,5 +388,9 @@ ul {
     padding: 5px;
     text-align: center;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+  a{
+    text-decoration: none;
+    color: #fff;
   }
 `;

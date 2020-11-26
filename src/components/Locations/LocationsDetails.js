@@ -13,7 +13,7 @@ import {
   Container,
   CardGridDetails,
   CardDetails,
-  Episodes,
+  Characters,
 } from './styles';
 import LocationsImg from './LocationsImg.jpg';
 import LocationsImg2 from './LocationsImg2.jpeg';
@@ -64,13 +64,13 @@ class LocationsDetails extends React.Component {
     return (
       <div>
         <HeaderDetails>
-          <div className="IconBack">
-            <Link to={`/locations?page=${this.props.location.state.lastPage}`}>
-              <ArrowBack style={{ fontSize: 60 }} />
-            </Link>
-          </div>
-
           <header>
+            <div className="IconBack">
+              <Link to={`/locations?page=${this.props.location.state.lastPage}`}>
+                <ArrowBack style={{ fontSize: 60 }} />
+              </Link>
+            </div>
+
             <h1>{this.state.location && this.state.location.name}</h1>
           </header>
         </HeaderDetails>
@@ -110,7 +110,7 @@ class LocationsDetails extends React.Component {
                   </ul>
                 </div>
               </div>
-              <Episodes>
+              <Characters>
                 <ul>
                   <p>Residents:</p>
                   {this.state.character
@@ -120,7 +120,7 @@ class LocationsDetails extends React.Component {
                       </li>
                     ))}
                 </ul>
-              </Episodes>
+              </Characters>
             </CardDetails>
           </CardGridDetails>
         </Container>
