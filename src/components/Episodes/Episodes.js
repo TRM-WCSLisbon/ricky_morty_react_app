@@ -1,7 +1,7 @@
-import React from "react";
-import { Switch, Route } from "react-router-dom";
-import EpisodesList from "./EpisodesList";
-import EpisodesDetails from "./EpisodesDetails";
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import EpisodesList from './EpisodesList';
+import EpisodesDetails from './EpisodesDetails';
 
 function Episodes() {
   return (

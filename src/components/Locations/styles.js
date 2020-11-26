@@ -1,3 +1,4 @@
+/* eslint-disable no-constant-condition */
 /* eslint-disable linebreak-style */
 import styled, { keyframes } from 'styled-components';
 import HeaderFont from '../get_schwifty.ttf';
@@ -224,7 +225,7 @@ export const Spinner = styled.div`
   }
 `;
 
-////////////////////////////////////////////////////////////////////////////WITH DETAILS//////////////////////////////////////////////////////////////////////////////////////////
+/// ///////////////////////////WITH DETAILS/////////
 
 export const HeaderDetails = styled.div`
   @font-face {

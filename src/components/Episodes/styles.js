@@ -1,5 +1,5 @@
-import styled, { keyframes } from "styled-components";
-import HeaderFont from "../get_schwifty.ttf";
+import styled, { keyframes } from 'styled-components';
+import HeaderFont from '../get_schwifty.ttf';
 
 export const Header = styled.div`
   @font-face {
@@ -72,19 +72,7 @@ export const Card = styled.div`
     object-fit: cover;
     border-radius: 50px;
   }
-  // ul {
-  //   opacity: ${(props) => (props.displayEpisodes ? 1 : 0)};
-  //   top: 0;
-  //   right: 0;
-  //   height: 82%;
-  //   width: 98%;
-  //   position: absolute;
-  //   overflow-y: ${(props) => (props.displayEpisodes ? "auto" : "hidden")};
-  //   transition: opacity 150ms ease-in-out;
-  //   &::-webkit-scrollbar {
-  //     display: none;
-  //   }
-  //}
+ 
   li {
     font-weight: bold;
     width: 100%;
@@ -167,14 +155,14 @@ export const Card = styled.div`
 `;
 
 export const CardGrid = styled.ul`
-  display: ${({ loading }) => (loading ? "block" : "grid")};
+  display: ${({ loading }) => (loading ? 'block' : 'grid')};
   grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
   margin: 0 60px;
   grid-gap: 25px;
 `;
 
 export const PageNumber = styled.div`
-  // color: ${({ actualPage }) => (actualPage ? "#21d8ff" : "#000")};
+  // color: ${({ actualPage }) => (actualPage ? '#21d8ff' : '#000')};
   color: #000;
   ul {
     display: flex;
@@ -316,7 +304,7 @@ export const CardDetails = styled.div`
   //   height: 82%;
   //   width: 98%;
   //   position: absolute;
-  //   overflow-y: ${(props) => (props.displayEpisodes ? "auto" : "hidden")};
+  //   overflow-y: ${(props) => (props.displayEpisodes ? 'auto' : 'hidden')};
   //   transition: opacity 150ms ease-in-out;
   //   &::-webkit-scrollbar {
   //     display: none;
@@ -345,7 +333,7 @@ export const CardDetails = styled.div`
   }
 `;
 export const CardGridDetails = styled.ul`
-  display: ${({ loading }) => (loading ? "block" : "grid")};
+  display: ${({ loading }) => (loading ? 'block' : 'grid')};
   grid-template-columns: repeat(auto-fit, minmax(1fr));
   width: 750px;
   height: 550px;
@@ -367,7 +355,7 @@ ul {
   height: 82%;
   width: 98%;
   position: absolute;
-  overflow-y: ${(props) => (props.displayEpisodes ? "auto" : "hidden")};
+  overflow-y: ${(props) => (props.displayEpisodes ? 'auto' : 'hidden')};
   transition: opacity 150ms ease-in-out;
   &::-webkit-scrollbar {
     display: none;

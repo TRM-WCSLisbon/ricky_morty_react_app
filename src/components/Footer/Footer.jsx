@@ -38,7 +38,7 @@ const Footer = () => (
         If you want learn more..
         <br />
         <br />
-        <a href="https://www.wildcodeschool.com/en-GB/campuses/lisbon">
+        <a target="blank" href="https://www.wildcodeschool.com/en-GB/campuses/lisbon">
           Wild Code School Lisbon Campus
         </a>
         <hr />

@@ -1,3 +1,6 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable no-nested-ternary */
 /* eslint-disable linebreak-style */
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';

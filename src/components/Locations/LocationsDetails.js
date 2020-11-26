@@ -1,3 +1,7 @@
+/* eslint-disable react/no-access-state-in-setstate */
+/* eslint-disable react/prop-types */
+/* eslint-disable no-nested-ternary */
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable linebreak-style */
 /* eslint-disable react/state-in-constructor */
 import React from 'react';

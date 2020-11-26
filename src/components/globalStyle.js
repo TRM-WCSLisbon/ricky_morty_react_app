@@ -30,7 +30,3 @@ export default createGlobalStyle`
     list-style: none;
   }
   `;
-
-// body, input, button {
-//   font: 1em 'Roboto', sans-serif;
-// }
