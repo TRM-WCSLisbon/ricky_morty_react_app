@@ -1,3 +1,6 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable consistent-return */
+/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import API from '../API';

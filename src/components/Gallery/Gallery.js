@@ -42,7 +42,7 @@ function Gallery() {
             </div>
           </div>
         </Link>
-        <Link to="/locations" select>
+        <Link to="/locations?page=1" select>
           <div id="container">
             <img src={loc} alt="locations" />
             <div id="middle">
@@ -50,7 +50,7 @@ function Gallery() {
             </div>
           </div>
         </Link>
-        <Link to="/episodes" select>
+        <Link to="/episodes?page=1" select>
           <div id="container">
             <img src={epi} alt="episodes" />
             <div id="middle">

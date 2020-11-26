@@ -1,8 +1,11 @@
 import React from 'react';
+import EpisodeList from './EpisodesList';
 
 function Episodes() {
   return (
-    <p>Episodes</p>
+    <div>
+      <EpisodeList />
+    </div>
   );
 }
 

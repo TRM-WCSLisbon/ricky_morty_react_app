@@ -27,7 +27,7 @@ const Ul = styled.ul`
   right: 0;
   height: 30vh;
   // height:100%;
-  width: 30vw;
+  width: 25vw;
   // width: 100%;
   padding-top: -0.8rem;
   
@@ -61,7 +61,7 @@ const Ul = styled.ul`
   } 
   @media (max-width: 449px) {
     height: 20vh;
-    font-size:0.8em;
+    font-size:0.6em;
     
     li{
       margin-top:0;
@@ -79,14 +79,14 @@ const RightNav = ({ open }) => (
         </Link>
       </li>
       <li>
-        <Link to="/locations" select>
+        <Link to="/locations?page=1" select>
           Locations
         </Link>
       </li>
     </ul>
     <ul className="right">
       <li>
-        <Link to="/episodes" select>
+        <Link to="/episodes?page=1" select>
           Episodes
         </Link>
       </li>

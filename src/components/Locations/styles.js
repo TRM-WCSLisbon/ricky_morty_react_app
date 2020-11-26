@@ -1,55 +1,46 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
+import HeaderFont from "../get_schwifty.ttf";
 
 export const Header = styled.div`
-  font: 18px 'Orbitron', sans-serif;
+  @font-face {
+    font-family: "get_schwifty";
+    src: local("get_schwifty"), url(${HeaderFont}) format("truetype");
+  }
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   padding: 50px 50px 30px;
-
   header {
     margin: 10px;
     user-select: none;
-
     @media only screen and (max-width: 600px) {
       margin-top: -30px;
     }
-
     h1 {
-      font-size: 4em;
+      font: 5em "get_schwifty";
       -webkit-text-stroke: 1px #f5f5f5;
-
+      color: #21d8ff;
       @media only screen and (max-width: 600px) {
         text-align: center;
         font-size: 2.5em;
       }
-
-      span {
-        color: #21d8ff;
-      }
     }
   }
-
   ul {
     display: flex;
     font-size: 1.5em;
     margin-top: 5px;
-
     a {
       text-decoration: none;
-
       :first-child,
       :last-child {
         color: inherit;
       }
-
       li {
         padding: 0 10px;
         cursor: pointer;
         transition: color 100ms ease-in-out;
-
         :hover {
           @media only screen and (min-width: 600px) {
             color: #21d8ff;
@@ -59,7 +50,7 @@ export const Header = styled.div`
     }
   }
 `;
-export const Card = styled.li`
+export const Card = styled.div`
   color: #fff;
   background: #7d12ff;
   margin: 10px;
@@ -67,88 +58,139 @@ export const Card = styled.li`
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   cursor: pointer;
-  position: relative;
-
+  background-color: transparent;
+  height: 308px;
+  perspective: 1000px;
+  
   backdrop-filter: blur(5px);
   border: 4px solid #ab20fd;
   box-shadow: 0 10px 25px #ab20fd;
-
-  :hover {
-    @media only screen and (min-width: 600px) {
-      transform: scale(1.05);
-    }
-  }
-
   img {
-    width: 100%;
-    border-radius: 10px 10px 0 0;
+    margin: 10px auto;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50px;
   }
-
-  section {
-    header {
-      padding: 5px 0 10px 10px;
-
-      h1 {
-        span {
-          background: rgba(33, 216, 255, 0.8);
-          color: #fff;
-          border-radius: 3px;
-          padding: 0 6px;
-        }
-      }
-
-      h3 {
-        color: #fff;
-        margin-top: 5px;
-      }
-    }
-  }
-  ul {
-    opacity: ${props => (props.displayEpisodes ? 1 : 0)};
-    top: 0;
-    right: 0;
-    height: 82%;
-    width: 98%;
-    position: absolute;
-    overflow-y: ${props => (props.displayEpisodes ? 'auto' : 'hidden')};
-    transition: opacity 150ms ease-in-out;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    p {
-      background: #7159c1;
-      font-weight: bold;
-      border-radius: 5px;
-      padding: 5px;
-      margin: 5px 2px 5px 2px;
-      width: 30%;
-      text-align: center;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    }
-
+  // ul {
+  //   opacity: ${(props) => (props.displayEpisodes ? 1 : 0)};
+  //   top: 0;
+  //   right: 0;
+  //   height: 82%;
+  //   width: 98%;
+  //   position: absolute;
+  //   overflow-y: ${(props) => (props.displayEpisodes ? "auto" : "hidden")};
+  //   transition: opacity 150ms ease-in-out;
+  //   &::-webkit-scrollbar {
+  //     display: none;
+  //   }
+  //}
     li {
-      background: #7159c1;
       font-weight: bold;
-      width: 9%;
-      border-radius: 50%;
+      width: 100%;
+      border-radius: 20%;
       margin: 2px;
       padding: 5px;
       text-align: center;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      box-shadow: 0 1px 3px rgba(47,53,49, 0.12), 0 1px 2px rgba(47, 53, 49, 0.24);
     }
+  .card {
+    cursor: pointer;
+    background-color: transparent;
+    height: 300px;
+    perspective: 1000px;
+  }
+  
+  .card h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  .card span {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  .card .shadow-alive{
+    padding: 1em;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 3px 2px 2px #aed581;
+  }
+  .card .shadow-dead{
+    padding: 1em;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 3px 2px 2px #d58181;
+  }
+  .card img {
+    // width: 100%;
+    margin-top:-15px;
+    display: flex;
+    align-items: center;
+    // object-fit: cover;
+  }
+  
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .card:hover .card-inner {
+    transform: rotateY(360deg);
+  }
+  
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .card-back {
+    background-color: #333;
+    border-radius: 7px;
+    color: white;
+    padding: 20px;
+  }
+  
+  .card li {
+    list-style: none;
+    padding-bottom: 10px;
   }
 `;
 
 export const CardGrid = styled.ul`
-  display: ${({ loading }) => (loading ? 'block' : 'grid')};
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 15px;
+  display: ${({ loading }) => (loading ? "block" : "grid")};
+  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+  margin: 0 60px;
+  grid-gap: 25px;
+  
 `;
 
-export const PageNumber = styled.li`
-  color: ${({ actualPage }) => (actualPage ? '#21d8ff' : '#000')};
+export const PageNumber = styled.div`
+  // color: ${({ actualPage }) => (actualPage ? "#21d8ff" : "#000")};
+  color: #000;
+
+  ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  li{
+    padding: 30px 30px;
+  }
+
+  li a:hover{
+    color: #21d8ff;
+  }
+
+  
 `;
 
 const spinnerAnimation = keyframes`
@@ -165,13 +207,12 @@ export const Spinner = styled.div`
   opacity: 1;
   position: relative;
   transition: opacity linear 0.1s;
-
   &::before {
     animation: 2s linear infinite ${spinnerAnimation};
     border: solid 3px #7159c1;
     border-bottom-color: #21d8ff;
     border-radius: 50%;
-    content: '';
+    content: "";
     height: 40px;
     left: 50%;
     opacity: inherit;
