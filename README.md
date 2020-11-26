@@ -1,3 +1,32 @@
+# API Request Demo Site
+This site is a demo for project 2 for WCS Lisbon Campus requesting data from an API, particularly from the Rick and Morty API.
+
+## Technologies and Skills used
+This project was built using:
+
+* Single responsability principle
+* Separation of concerns
+* Reusable components
+* Reusable styles
+* React Hooks - useEffect, useState
+* Mobile first design approach
+* Conditional rendering
+* Full use of version control via Github: Different branches, commits, pull requests and merges.
+* Async Await
+* Fetch
+* Javascript
+* CSS
+* HTML
+* React
+* React Bootstrap
+
+## About me
+I'm a Web Developer with knowledge of the MERN Stack. My goal is to specialize on Front-end development and one day become a Jamstack developer.
+
+For any inquiries, please feel free to contact me through my Linkedin.
+
+Also, you can follow me on Github and Medium.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
