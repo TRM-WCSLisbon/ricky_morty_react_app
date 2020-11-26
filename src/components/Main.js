@@ -4,6 +4,7 @@ import Gallery from './Gallery/Gallery';
 import Characters from './CharactersV2/Characters';
 import Locations from './Locations/Locations';
 import Episodes from './Episodes/Episodes';
+import ContactForm from './Contact/ContactForm';
 
 const Main = () => (
   <main>
@@ -12,6 +13,7 @@ const Main = () => (
       <Route path="/characters" component={Characters} />
       <Route path="/locations" component={Locations} />
       <Route path="/episodes" component={Episodes} />
+      <Route path="/contact" component={ContactForm} />
     </Switch>
   </main>
 );

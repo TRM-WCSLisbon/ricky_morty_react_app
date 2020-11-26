@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import HeaderFont from "../get_schwifty.ttf";
+import styled from 'styled-components';
+import HeaderFont from '../get_schwifty.ttf';
 
 export const Header = styled.div`
   @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
@@ -33,7 +33,7 @@ export const Header = styled.div`
   }
   h1 {
     font: 4em "get_schwifty";
-    display: ${({ loading }) => (loading ? "block" : "grid")};
+    display: ${({ loading }) => (loading ? 'block' : 'grid')};
     grid-template-columns: repeat(auto-fit, 100px);
     grid-gap: 50px;
     margin: 20px 30px 30px 30px;
@@ -100,7 +100,7 @@ export const Header = styled.div`
 export const CardGrid = styled.ul`
   font: 3em "get_schwifty";
   color: #E97299;
-  display: ${({ loading }) => (loading ? "block" : "grid")};
+  display: ${({ loading }) => (loading ? 'block' : 'grid')};
   grid-template-columns: repeat(auto-fit, 300px);
   grid-gap: 60px;
   margin: 0 30px;

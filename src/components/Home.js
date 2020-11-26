@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from './NavBar/Navbar.jsx';
+import NavBar from './NavBar/Navbar';
 import Main from './Main';
 import Footer from './Footer/Footer';
 

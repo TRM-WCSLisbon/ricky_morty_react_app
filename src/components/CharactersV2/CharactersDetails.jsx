@@ -1,16 +1,20 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable implicit-arrow-linebreak */
+/* eslint-disable react/no-access-state-in-setstate */
+/* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/state-in-constructor */
-import React, { Component } from "react";
-import { NavLink as Link } from "react-router-dom";
-import ArrowBack from "@material-ui/icons/ArrowBack";
-import API from "../API";
+import React, { Component } from 'react';
+import { NavLink as Link } from 'react-router-dom';
+import ArrowBack from '@material-ui/icons/ArrowBack';
+import API from '../API';
 import {
   CardDetails,
   CardGridDetails,
   HeaderDetails,
   Container,
   Episodes,
-} from "./styles";
+} from './styles';
 
 class CharactersDetails extends Component {
   state = {
@@ -46,19 +50,19 @@ class CharactersDetails extends Component {
   getEpisode() {
     const currentCharacterId = Number(this.props.match.params.id);
     API.get(`/character/${currentCharacterId}`).then((response) => {
-      console.log(typeof response.data.episode, response.data.episode),
-        response.data.episode
-          .map(
-            (epi) =>
-              // console.log(typeof epi, epi)))
-              epi.split("/episode/")[1]
-          )
-          .map((epi) => {
-            //console.log(epi);
-            //<li key={epi}>{epi}</li>;
+      // console.log(typeof response.data.episode, response.data.episode),
+      response.data.episode
+        .map(
+          (epi) =>
+          // console.log(typeof epi, epi)))
+            epi.split('/episode/')[1],
+        )
+        .map((epi) => {
+          // console.log(epi);
+          // <li key={epi}>{epi}</li>;
 
-            this.setState({ episodes: [...this.state.episodes, epi] });
-          });
+          this.setState({ episodes: [...this.state.episodes, epi] });
+        });
     });
   }
 
@@ -67,7 +71,6 @@ class CharactersDetails extends Component {
       name,
       image,
       id,
-      episode,
       status,
       species,
       origin,
@@ -102,20 +105,33 @@ class CharactersDetails extends Component {
                   {/* <h1>Name: {this.state.character.name}</h1> */}
                   <ul>
                     <li>
-                      <h3>Species:</h3> <span>{character && species}</span>
+                      <h3>Species:</h3>
+                      {' '}
+                      <span>{character && species}</span>
                     </li>
                     <li>
-                      <h3>Status:</h3> <span>{character && status}</span>
+                      <h3>Status:</h3>
+                      {' '}
+                      <span>{character && status}</span>
                     </li>
                     <li>
-                      <h3>Gender:</h3> <span>{character && gender}</span>
+                      <h3>Gender:</h3>
+                      {' '}
+                      <span>{character && gender}</span>
                     </li>
                     <li>
-                      <h3>Origin:</h3> <span>{origin && origin.name}</span>
+                      <h3>Origin:</h3>
+                      {' '}
+                      <Link to={`/location/${origin && origin.name}`}>
+                        <span>{origin && origin.name}</span>
+                      </Link>
                     </li>
                     <li>
-                      <h3>Location:</h3>{" "}
-                      <span>{location && location.name}</span>
+                      <h3>Location:</h3>
+                      {' '}
+                      <Link to={`/location/${location}`}>
+                        <span>{location && location.name}</span>
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -126,15 +142,13 @@ class CharactersDetails extends Component {
 
                   {/* <li key={id + episode}>{episodes}</li> */}
 
-                  {episodes &&
-                  episodes
-                     .map((epi) => (
-                       console.log(epi),
-                    <li key={id + epi}>
-                    {epi}
-                    </li>
-                     ))
-                  }
+                  {episodes
+                    && episodes.map(
+                      (epi) => (
+                        //  console.log(epi),
+                        (<Link to={`/episode/${epi}`}><li key={id + epi}>{epi}</li></Link>)
+                      ),
+                    )}
                 </ul>
               </Episodes>
             </CardDetails>

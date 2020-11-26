@@ -1,5 +1,6 @@
-import styled, { keyframes } from "styled-components";
-import HeaderFont from "../get_schwifty.ttf";
+/* eslint-disable no-constant-condition */
+import styled, { keyframes } from 'styled-components';
+import HeaderFont from '../get_schwifty.ttf';
 
 export const Header = styled.div`
   @font-face {
@@ -167,7 +168,7 @@ export const Card = styled.div`
   }
 `;
 export const CardGrid = styled.ul`
-  display: ${({ loading }) => (loading ? "block" : "grid")};
+  display: ${({ loading }) => (loading ? 'block' : 'grid')};
   grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
   margin: 0 60px;
   grid-gap: 25px;
@@ -278,7 +279,7 @@ export const CardDetails = styled.div`
   //   height: 82%;
   //   width: 98%;
   //   position: absolute;
-  //   overflow-y: ${(props) => (props.displayEpisodes ? "auto" : "hidden")};
+  //   overflow-y: ${(props) => (props.displayEpisodes ? 'auto' : 'hidden')};
   //   transition: opacity 150ms ease-in-out;
 
   //   &::-webkit-scrollbar {
@@ -311,7 +312,7 @@ export const CardDetails = styled.div`
 `;
 
 export const CardGridDetails = styled.ul`
-  display: ${({ loading }) => (loading ? "block" : "grid")};
+  display: ${({ loading }) => (loading ? 'block' : 'grid')};
   grid-template-columns: repeat(auto-fit, minmax(1fr));
   width: 750px;
   height: 550px;
@@ -331,11 +332,11 @@ ul {
   height: 82%;
   width: 98%;
   position: absolute;
-  overflow-y: ${('auto' ? "auto" : "hidden")};
+  overflow-y: ${('auto' ? 'auto' : 'hidden')};
   transition: opacity 150ms ease-in-out;
 
   &::-webkit-scrollbar {
-    display: hidden;
+    display: none;
   }
 
   p {
@@ -359,9 +360,13 @@ ul {
     text-align: center;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   }
+  a{
+    text-decoration: none;
+    color: #fff;
+  }
 `;
 export const PageNumber = styled.li`
-  // color: ${({ actualPage }) => (actualPage ? "#21d8ff" : "#000")};
+  // color: ${({ actualPage }) => (actualPage ? '#21d8ff' : '#000')};
   list-style: none;
 
   .pagination {
