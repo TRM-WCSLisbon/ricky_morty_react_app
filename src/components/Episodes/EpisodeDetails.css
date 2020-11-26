@@ -1,0 +1,29 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.episode-details {
+  /* 
+  
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center; */
+  border: 1px solid red;
+  height: 200px;
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+
+img {
+  background-color: aliceblue;
+  height: 100%;
+  width: 50%;
+}
+
+.card-detail {
+  padding: 20px;
+  text-align: center;
+}
