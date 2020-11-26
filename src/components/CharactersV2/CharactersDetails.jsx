@@ -103,7 +103,9 @@ class CharactersDetails extends Component {
       gender,
     } = this.state.character;
 
-    const { episodes, character, locationId, originId } = this.state;
+    const {
+      episodes, character, locationId, originId,
+    } = this.state;
 
     return (
       <div>
