@@ -21,11 +21,19 @@ This project was built using:
 * Material-UI
 
 ## About me
-I'm a Web Developer with knowledge of the MERN Stack. My goal is to specialize on Front-end development and one day become a Jamstack developer.
+We are students of Web Developer with knowledge of the front-end. Our goal is to specialize on Full-Stack development and one day become a good Juniors developers.
 
-For any inquiries, please feel free to contact me through my Linkedin.
+For any inquiries, please feel free to contact us through ours Linkedins:
 
-Also, you can follow me on Github and Medium.
+**Luis Clara
+https://www.linkedin.com/in/lu%C3%ADs-clara-689822119
+
+**Hugo Mendes
+https://github.com/HugoCravoMendes
+
+**Nem Kanta
+https://www.linkedin.com/in/nem-kanta-3631a6189/
+
 
 # Getting Started with Create React App
 
