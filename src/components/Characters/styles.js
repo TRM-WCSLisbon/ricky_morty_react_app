@@ -1,5 +1,5 @@
-import styled, { keyframes } from "styled-components";
-import HeaderFont from "../get_schwifty.ttf";
+import styled, { keyframes } from 'styled-components';
+import HeaderFont from '../get_schwifty.ttf';
 
 export const Header = styled.div`
   @font-face {
@@ -91,7 +91,7 @@ export const Card = styled.div`
   //   height: 82%;
   //   width: 98%;
   //   position: absolute;
-  //   overflow-y: ${(props) => (props.displayEpisodes ? "auto" : "hidden")};
+  //   overflow-y: ${(props) => (props.displayEpisodes ? 'auto' : 'hidden')};
   //   transition: opacity 150ms ease-in-out;
 
   //   &::-webkit-scrollbar {
@@ -182,7 +182,7 @@ export const Card = styled.div`
 `;
 
 export const CardGrid = styled.ul`
-  display: ${({ loading }) => (loading ? "block" : "grid")};
+  display: ${({ loading }) => (loading ? 'block' : 'grid')};
   grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
   margin: 0 60px;
   grid-gap: 25px;
@@ -190,7 +190,7 @@ export const CardGrid = styled.ul`
 `;
 
 export const PageNumber = styled.li`
-  color: ${({ actualPage }) => (actualPage ? "#21d8ff" : "#000")};
+  color: ${({ actualPage }) => (actualPage ? '#21d8ff' : '#000')};
 `;
 
 const spinnerAnimation = keyframes`
@@ -214,14 +214,14 @@ export const Spinner = styled.div`
     border-bottom-color: #21d8ff;
     border-radius: 50%;
     content: "";
-    height: 40px;
+    height: 400px;
     left: 50%;
     opacity: inherit;
     position: absolute;
     top: 25%;
     transform: translate3d(-50%, -50%, 0);
     transform-origin: center;
-    width: 40px;
+    width: 400px;
     will-change: transform;
   }
 `;

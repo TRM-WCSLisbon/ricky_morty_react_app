@@ -34,7 +34,7 @@ function Gallery() {
         </span>
       </Header>
       <CardGrid>
-        <Link to="/characters/" select>
+        <Link to="/characters" select>
           <div id="container">
             <img src={char} alt="characters" />
             <div id="middle">
@@ -42,7 +42,7 @@ function Gallery() {
             </div>
           </div>
         </Link>
-        <Link to="/locations" select>
+        <Link to="/locations?page=1" select>
           <div id="container">
             <img src={loc} alt="locations" />
             <div id="middle">
@@ -50,7 +50,7 @@ function Gallery() {
             </div>
           </div>
         </Link>
-        <Link to="/episodes" select>
+        <Link to="/episodes?page=1" select>
           <div id="container">
             <img src={epi} alt="episodes" />
             <div id="middle">
@@ -58,7 +58,7 @@ function Gallery() {
             </div>
           </div>
         </Link>
-        <Link to="/contact" select>
+        <Link to="/contactus" select>
           <div id="container">
             <img src={cont} alt="contact" />
             <div id="middle">
