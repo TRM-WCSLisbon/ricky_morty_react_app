@@ -8,7 +8,7 @@ import CharactersList from './CharactersList';
 function Characters() {
   return (
     <Switch>
-      <Route path="/characters/:page?" component={CharactersList} />
+      <Route exact path="/characters/" component={CharactersList} />
     </Switch>
   );
 }

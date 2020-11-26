@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink as Link } from 'react-router-dom';
@@ -15,7 +16,7 @@ const Ul = styled.ul`
   justify-content: center;
   text-align: center;
   flex-flow: column nowrap;
-  background-color: #31445E;
+  background-color: #59B4A1;
   opacity: 0.85;
   // position: fixed;
   transition: transform 0.45s ease-in-out;
@@ -26,7 +27,7 @@ const Ul = styled.ul`
   right: 0;
   height: 30vh;
   // height:100%;
-  width: 30vw;
+  width: 25vw;
   // width: 100%;
   padding-top: -0.8rem;
   
@@ -60,7 +61,7 @@ const Ul = styled.ul`
   } 
   @media (max-width: 449px) {
     height: 20vh;
-    font-size:0.8em;
+    font-size:0.6em;
     
     li{
       margin-top:0;
@@ -73,7 +74,7 @@ const RightNav = ({ open }) => (
   <Ul open={open}>
     <ul>
       <li>
-        <Link to="/characters/" select>
+        <Link to="/characters" select>
           Characters
         </Link>
       </li>
@@ -90,7 +91,7 @@ const RightNav = ({ open }) => (
         </Link>
       </li>
       <li>
-        <Link to="/contact" select>
+        <Link to="/contactus" select>
           Contact Us
         </Link>
       </li>
