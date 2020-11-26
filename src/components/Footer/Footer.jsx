@@ -11,7 +11,7 @@ import {
 
 const Footer = () => (
   <div
-    className="row"
+    className="row background"
     style={{
       color: "#000",
       bottom: "0",
@@ -20,7 +20,7 @@ const Footer = () => (
       height: " 175px",
       display: "flex",
       justifyContent: "center",
-      backgroundColor: "whitesmoke",
+      
       marginTop: "40px",
     }}
   >

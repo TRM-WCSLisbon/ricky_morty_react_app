@@ -1,3 +1,8 @@
+.background{
+  /* background-color: whitesmoke; */
+  opacity: 0.85;
+}
+
 .social-container {
     display: flex;
     justify-content: center;

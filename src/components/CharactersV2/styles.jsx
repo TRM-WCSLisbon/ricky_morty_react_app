@@ -326,17 +326,16 @@ export const CardGridDetails = styled.ul`
 `;
 export const Episodes = styled.div`
 ul {
-  //opacity: ${(props) => (props.displayEpisodes ? 1 : 0)};
-  top: 69%;
+  top: 0;
   right: 0;
   height: 82%;
   width: 98%;
   position: absolute;
-  overflow-y: ${(props) => (props.displayEpisodes ? "auto" : "hidden")};
+  overflow-y: ${('auto' ? "auto" : "hidden")};
   transition: opacity 150ms ease-in-out;
 
   &::-webkit-scrollbar {
-    display: none;
+    display: hidden;
   }
 
   p {
