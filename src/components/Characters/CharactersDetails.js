@@ -21,7 +21,7 @@ useEffect(() => {
   loadData();
 }, [match.params.page, page]);
 
-function setDisplayEpisodes(id) {
+function setEpisodes(id) {
   setCharacters(
     characters.map((char) =>
       char.id === id
