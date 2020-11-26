@@ -1,17 +1,19 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable react/state-in-constructor */
-import React from "react";
-import API from "../API";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import ArrowBack from '@material-ui/icons/ArrowBack';
+import API from '../API';
 import {
   HeaderDetails,
   Container,
   CardGridDetails,
   CardDetails,
-} from "./styles";
-import LocationsImg from "./LocationsImg.jpg";
-import LocationsImg2 from "./LocationsImg_2.jpg";
-import LocationsImg3 from "./LocationsImg_3.png";
-// import Episodes from "../Episodes/Episodes";
+  Episodes,
+} from './styles';
+import LocationsImg from './LocationsImg.jpg';
+import LocationsImg2 from './LocationsImg2.jpeg';
+import LocationsImg3 from './LocationsImg3.png';
 
 class LocationsDetails extends React.Component {
   state = {
@@ -37,7 +39,7 @@ class LocationsDetails extends React.Component {
     // console.log(this.props);
     // console.log(locationId);
     API.get(`/location/${locationId}`).then(
-      (response) => this.setState({ location: response.data })
+      (response) => this.setState({ location: response.data }),
       // console.log(this.state.location)
     );
   };
@@ -46,26 +48,24 @@ class LocationsDetails extends React.Component {
     const locationId = Number(this.props.match.params.id);
     API.get(`/location/${locationId}`).then(
       (response) => (
-        console.log(typeof response.data.residents, response.data.residents),
+        // console.log(typeof response.data.residents, response.data.residents),
         response.data.residents
-          .map((char) => char.split("character/")[1])
-          .map((char) =>
-            this.setState({ character: [...this.state.character, char] })
-          )
-      )
+          .map((char) => char.split('character/')[1])
+          .map((char) => this.setState({ character: [...this.state.character, char] }))
+      ),
     );
   };
 
   render() {
-    console.log(this.props);
     return (
       <div>
         <HeaderDetails>
-          <button>
+          <div className="IconBack">
             <Link to={`/locations?page=${this.props.location.state.lastPage}`}>
-              Go back
+              <ArrowBack style={{ fontSize: 60 }} />
             </Link>
-          </button>
+          </div>
+
           <header>
             <h1>{this.state.location && this.state.location.name}</h1>
           </header>
@@ -77,11 +77,11 @@ class LocationsDetails extends React.Component {
                 <div className="column-left">
                   <img
                     src={
-                      this.state.location.type === "Planet"
+                      this.state.location.type === 'Planet'
                         ? LocationsImg
-                        : this.state.location.type === "Space station"
-                        ? LocationsImg3
-                        : LocationsImg2
+                        : this.state.location.type === 'Space station'
+                          ? LocationsImg3
+                          : LocationsImg2
                     }
                     alt={this.state.location && this.state.location.name}
                   />
@@ -90,31 +90,33 @@ class LocationsDetails extends React.Component {
                   {/* <h1>Name: {this.state.character.name}</h1> */}
                   <ul>
                     <li>
-                      <h3>Type:</h3>{" "}
+                      <h3>Type:</h3>
+                      {' '}
                       <span>
                         {this.state.location && this.state.location.type}
                       </span>
                     </li>
                     <li>
-                      <h3>Dimension:</h3>{" "}
+                      <h3>Dimension:</h3>
+                      {' '}
                       <span>
                         {this.state.location && this.state.location.dimension}
-                      </span>
-                    </li>
-                    <li>
-                      <h3>Residents:</h3>{" "}
-                      <span>
-                        {this.state.character &&
-                          this.state.character.map((char) => (
-                            <li>
-                              <Link to={`/episodes/${char}`}>{char}</Link>
-                            </li>
-                          ))}
                       </span>
                     </li>
                   </ul>
                 </div>
               </div>
+              <Episodes>
+                <ul>
+                  <p>Residents:</p>
+                  {this.state.character
+                    && this.state.character.map((char) => (
+                      <li>
+                        <Link to={`/characters/${char}`}>{char}</Link>
+                      </li>
+                    ))}
+                </ul>
+              </Episodes>
             </CardDetails>
           </CardGridDetails>
         </Container>

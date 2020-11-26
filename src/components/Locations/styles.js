@@ -1,5 +1,6 @@
-import styled, { keyframes } from "styled-components";
-import HeaderFont from "../get_schwifty.ttf";
+/* eslint-disable linebreak-style */
+import styled, { keyframes } from 'styled-components';
+import HeaderFont from '../get_schwifty.ttf';
 
 export const Header = styled.div`
   @font-face {
@@ -59,7 +60,7 @@ export const Card = styled.div`
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   cursor: pointer;
   background-color: transparent;
-  height: 308px;
+  height: 345px;
   perspective: 1000px;
 
   backdrop-filter: blur(5px);
@@ -79,7 +80,7 @@ export const Card = styled.div`
   //   height: 82%;
   //   width: 98%;
   //   position: absolute;
-  //   overflow-y: ${(props) => (props.displayEpisodes ? "auto" : "hidden")};
+  //   overflow-y: ${(props) => (props.displayEpisodes ? 'auto' : 'hidden')};
   //   transition: opacity 150ms ease-in-out;
   //   &::-webkit-scrollbar {
   //     display: none;
@@ -150,7 +151,7 @@ export const Card = styled.div`
   .card-back {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 106%;
   }
 
   .card-back {
@@ -167,14 +168,14 @@ export const Card = styled.div`
 `;
 
 export const CardGrid = styled.ul`
-  display: ${({ loading }) => (loading ? "block" : "grid")};
+  display: ${({ loading }) => (loading ? 'block' : 'grid')};
   grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
   margin: 0 60px;
   grid-gap: 25px;
 `;
 
 export const PageNumber = styled.div`
-  // color: ${({ actualPage }) => (actualPage ? "#21d8ff" : "#000")};
+  // color: ${({ actualPage }) => (actualPage ? '#21d8ff' : '#000')};
   color: #000;
 
   ul {
@@ -312,6 +313,7 @@ export const CardDetails = styled.div`
     height: 300px;
     object-fit: cover;
     border-radius: 7px;
+    margin-left: 127px;
   }
   // ul {
   //   opacity: ${(props) => (props.displayEpisodes ? 1 : 0)};
@@ -320,7 +322,7 @@ export const CardDetails = styled.div`
   //   height: 82%;
   //   width: 98%;
   //   position: absolute;
-  //   overflow-y: ${(props) => (props.displayEpisodes ? "auto" : "hidden")};
+  //   overflow-y: ${(props) => (props.displayEpisodes ? 'auto' : 'hidden')};
   //   transition: opacity 150ms ease-in-out;
   //   &::-webkit-scrollbar {
   //     display: none;
@@ -345,11 +347,9 @@ export const CardDetails = styled.div`
     float: right;
     margin: -30px -20px 0 10px;
   }
-  .Episodes {
-  }
 `;
 export const CardGridDetails = styled.ul`
-  display: ${({ loading }) => (loading ? "block" : "grid")};
+  display: ${({ loading }) => (loading ? 'block' : 'grid')};
   grid-template-columns: repeat(auto-fit, minmax(1fr));
   width: 750px;
   height: 550px;
@@ -361,4 +361,42 @@ export const CardGridDetails = styled.ul`
   padding: 20px;
   justify-content: center;
   align-items: center;
+`;
+
+export const Episodes = styled.div`
+ul {
+  top: 2%;
+  left: 2%;
+  height: 82%;
+  width: 50%;
+  position: absolute;
+  overflow-y: ${'auto' ? 'auto' : 'hidden'};
+  transition: opacity 150ms ease-in-out;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  p {
+    background: #7159c1;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px 2px 5px 2px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+  li {
+    background: #7159c1;
+    font-weight: bold;
+    width: 9%;
+    border-radius: 50%;
+    margin: 2px;
+    padding: 5px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+  a{
+    text-decoration: none;
+    color: #fff;
+  }
 `;

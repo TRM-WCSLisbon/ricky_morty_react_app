@@ -1,10 +1,15 @@
-import React from "react";
-import { Link, withRouter } from "react-router-dom";
-import querystring from "query-string";
-import API from "../API";
+/* eslint-disable linebreak-style */
+import React from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import querystring from 'query-string';
+import API from '../API';
 // import LocationsDetails from "./LocationsDetails";
-import { CardGrid, Card, Header, PageNumber } from "./styles";
-import LocationsImg from "./LocationsImg.jpg";
+import {
+  CardGrid, Card, Header, PageNumber,
+} from './styles';
+import LocationsImg from './LocationsImg.jpg';
+import LocationsImg2 from './LocationsImg2.jpeg';
+import LocationsImg3 from './LocationsImg3.png';
 
 class LocationsList extends React.Component {
   constructor(props) {
@@ -13,12 +18,11 @@ class LocationsList extends React.Component {
       locations: [],
     };
     this.getLocations = this.getLocations.bind(this);
-    const page = null;
   }
 
   componentDidMount() {
     const initialPage = Number(
-      querystring.parse(this.props.location.search).page
+      querystring.parse(this.props.location.search).page,
     );
     this.page = initialPage;
     this.getLocations(initialPage);
@@ -26,7 +30,7 @@ class LocationsList extends React.Component {
 
   componentDidUpdate(prevProps) {
     const currentPage = Number(
-      querystring.parse(this.props.location.search).page
+      querystring.parse(this.props.location.search).page,
     );
     const prevPage = Number(querystring.parse(prevProps.location.search).page);
     if (prevPage !== currentPage) {
@@ -35,9 +39,7 @@ class LocationsList extends React.Component {
   }
 
   getLocations(currentPage) {
-    API.get(`/location?page=${currentPage}`).then((response) =>
-      this.setState({ locations: response.data.results })
-    );
+    API.get(`/location?page=${currentPage}`).then((response) => this.setState({ locations: response.data.results }));
   }
 
   render() {
@@ -60,7 +62,7 @@ class LocationsList extends React.Component {
                 pathname: `/locations/${location.id}`,
                 state: {
                   lastPage: Number(
-                    querystring.parse(this.props.location.search).page
+                    querystring.parse(this.props.location.search).page,
                   ),
                 },
               }}
@@ -71,15 +73,28 @@ class LocationsList extends React.Component {
                     <div className="card-front">
                       <div className="card-back">
                         <ul>
-                          <img src={LocationsImg} alt={location.name} />
+                          <img
+                            src={
+                              location.type === 'Planet'
+                                ? LocationsImg
+                                : location.type === 'Space station'
+                                  ? LocationsImg3
+                                  : LocationsImg2
+                            }
+                            alt={location.name}
+                          />
                           <li>
                             <span>{location.id}</span>
                           </li>
                           <li>
-                            <h3>Name:</h3> <span>{location.name}</span>
+                            <h3>Name:</h3>
+                            {' '}
+                            <span>{location.name}</span>
                           </li>
                           <li>
-                            <h3>Type:</h3> <span>{location.type}</span>
+                            <h3>Type:</h3>
+                            {' '}
+                            <span>{location.type}</span>
                           </li>
                         </ul>
                       </div>
