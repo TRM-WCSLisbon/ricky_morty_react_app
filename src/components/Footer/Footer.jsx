@@ -64,7 +64,7 @@ const Footer = () => (
           <FontAwesomeIcon icon={faFacebook} size="2x" />
         </a>
         <a
-          href=""
+          href="https://www.linkedin.com/in/nem-kanta-3631a6189/"
           target="blank"
           className="twitter social"
         >
