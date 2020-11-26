@@ -12,13 +12,13 @@ This project was built using:
 * Mobile first design approach
 * Conditional rendering
 * Full use of version control via Github: Different branches, commits, pull requests and merges.
-* Async Await
-* Fetch
+* Axios
 * Javascript
 * CSS
 * HTML
 * React
 * React Bootstrap
+* Material-UI
 
 ## About me
 I'm a Web Developer with knowledge of the MERN Stack. My goal is to specialize on Front-end development and one day become a Jamstack developer.
