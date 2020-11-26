@@ -11,7 +11,7 @@ import {
 import LocationsImg from "./LocationsImg.jpg";
 import LocationsImg2 from "./LocationsImg_2.jpg";
 import LocationsImg3 from "./LocationsImg_3.png";
-import Episodes from "../Episodes/Episodes";
+// import Episodes from "../Episodes/Episodes";
 
 class LocationsDetails extends React.Component {
   state = {
@@ -57,11 +57,14 @@ class LocationsDetails extends React.Component {
   };
 
   render() {
+    console.log(this.props);
     return (
       <div>
         <HeaderDetails>
           <button>
-            <Link to={`/locations?page=1`}>Go back</Link>
+            <Link to={`/locations?page=${this.props.location.state.lastPage}`}>
+              Go back
+            </Link>
           </button>
           <header>
             <h1>{this.state.location && this.state.location.name}</h1>

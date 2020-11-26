@@ -13,12 +13,14 @@ class LocationsList extends React.Component {
       locations: [],
     };
     this.getLocations = this.getLocations.bind(this);
+    const page = null;
   }
 
   componentDidMount() {
     const initialPage = Number(
       querystring.parse(this.props.location.search).page
     );
+    this.page = initialPage;
     this.getLocations(initialPage);
   }
 
@@ -53,7 +55,16 @@ class LocationsList extends React.Component {
         ) : ( */}
 
           {this.state.locations.map((location) => (
-            <Link to={`/locations/${location.id}`}>
+            <Link
+              to={{
+                pathname: `/locations/${location.id}`,
+                state: {
+                  lastPage: Number(
+                    querystring.parse(this.props.location.search).page
+                  ),
+                },
+              }}
+            >
               <Card key={location.id}>
                 <div className="card">
                   <div className="card-inner">
@@ -129,8 +140,6 @@ export default withRouter(LocationsList);
 //                       ))}
 // }
 
-{
-  /* <li>
+/* <li>
                 <Link to={`/locations?page=${this.state.page}`}>1</Link>
               </li> */
-}

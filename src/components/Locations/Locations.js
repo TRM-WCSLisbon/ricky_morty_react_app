@@ -5,11 +5,13 @@ import LocationsDetails from "./LocationsDetails";
 
 function Locations() {
   return (
-    <Switch>
-      <Route exact path="/locations" component={LocationsList} />
-      <Route path="/locations/:id" component={LocationsDetails} />
-      {/* <Redirect to="/locations?page=1" /> */}
-    </Switch>
+    <div>
+      <Switch>
+        <Route exact path="/locations" component={LocationsList} />
+        <Route path="/locations/:id" component={LocationsDetails} />
+        {/* <Redirect to="/locations?page=1" /> */}
+      </Switch>
+    </div>
   );
 }
 export default Locations;
