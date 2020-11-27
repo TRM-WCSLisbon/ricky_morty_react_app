@@ -53,7 +53,7 @@ function ContactForm() {
           <label>Age</label>
           <input name="age" type="number" ref={register} />
           {errors.age && (
-            <p>You Must be older then 16 to see this TV series and younger then 420 years old!!</p>
+            <p>You Must be older then 16 and younger then 420 years old to see this TV series!!</p>
           )}
         </div>
         <div style={{ marginBottom: 0 }}>
@@ -76,18 +76,6 @@ function ContactForm() {
             <option value="Bug">Report a bug</option>
           </select>
         </div>
-        {/* <label>Subject</label> */}
-        {/* <Controller
-        name="Subject"
-        as={Select}
-        options={[
-          { value: "chocolate", label: "Chocolate" },
-          { value: "strawberry", label: "Strawberry" },
-          { value: "vanilla", label: "Vanilla" }
-        ]}
-        ref={register}
-        defaultValue=""
-      /> */}
         <input type="submit" style={{ marginTop: 20 }} />
       </Form>
     </>
