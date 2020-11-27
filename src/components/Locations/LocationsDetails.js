@@ -66,7 +66,7 @@ class LocationsDetails extends React.Component {
         <HeaderDetails>
           <header>
             <div className="IconBack">
-              <Link to={`/locations?page=${this.props.location.state.lastPage}`}>
+              <Link to="/locations?page=1">
                 <ArrowBack style={{ fontSize: 60 }} />
               </Link>
             </div>

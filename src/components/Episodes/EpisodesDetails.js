@@ -7,6 +7,7 @@
 /* eslint-disable react/state-in-constructor */
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ArrowBack from '@material-ui/icons/ArrowBack';
 import API from '../API';
 import {
   HeaderDetails,
@@ -81,6 +82,11 @@ class EpisodesDetails extends React.Component {
       <div>
         <HeaderDetails>
           <header>
+            <div className="IconBack">
+              <Link to="/episodes?page=1">
+                <ArrowBack style={{ fontSize: 60 }} />
+              </Link>
+            </div>
             <h1>{this.state.episode && this.state.episode.name}</h1>
           </header>
         </HeaderDetails>
@@ -97,9 +103,6 @@ class EpisodesDetails extends React.Component {
                     }
                     alt={this.state.episode && this.state.episode.name}
                   />
-                  <button>
-                    <Link to="/episodes?page=1">Go to Episode List</Link>
-                  </button>
                 </div>
                 <div className="column-right">
                   {/* <h1>Name: {this.state.episode.name}</h1> */}
