@@ -256,7 +256,7 @@ export const CardDetails = styled.div`
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   background-color: transparent;
-  height: 500px;
+  height: 450px;
   width: 700px;
   display: grid;
   justify-content: center;
@@ -266,8 +266,10 @@ export const CardDetails = styled.div`
   box-shadow: 0 10px 25px #ab20fd;
 
   img {
-    // position:absolute;
+    float:left;
+    position:relative;
     // z-index:-1;
+    margin-top: 10px;
     width: 300px;
     height: 300px;
     object-fit: cover;
@@ -292,7 +294,7 @@ export const CardDetails = styled.div`
   }
   .column-right {
     float: right;
-    margin: -20px -20px 0 10px;
+    margin: -10px -20px 0 10px;
   }
 `;
 
@@ -300,7 +302,7 @@ export const CardGridDetails = styled.ul`
   display: ${({ loading }) => (loading ? 'block' : 'grid')};
   grid-template-columns: repeat(auto-fit, minmax(1fr));
   width: 750px;
-  height: 550px;
+  height: 500px;
   margin: 20px 50px;
   grid-gap: 25px;
   background-color: #333;

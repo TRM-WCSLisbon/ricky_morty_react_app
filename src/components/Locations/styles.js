@@ -364,7 +364,7 @@ export const CardGridDetails = styled.ul`
   align-items: center;
 `;
 
-export const Episodes = styled.div`
+export const Characters = styled.div`
 ul {
   top: 2%;
   left: 2%;

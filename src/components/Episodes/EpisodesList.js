@@ -76,7 +76,16 @@ class EpisodesList extends React.Component {
         </Header>
         <CardGrid>
           {this.state.episodes.map((episode) => (
-            <Link to={`/episodes/${episode.id}`}>
+            <Link
+              to={{
+                pathname: `/episodes/${episode.id}`,
+                state: {
+                  lastPage: Number(
+                    querystring.parse(this.props.location.search).page,
+                  ),
+                },
+              }}
+            >
               <Card key={episode.id}>
                 <div className="card">
                   <div className="card-inner">

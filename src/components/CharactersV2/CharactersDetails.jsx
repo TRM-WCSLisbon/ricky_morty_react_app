@@ -147,14 +147,14 @@ class CharactersDetails extends Component {
                     <li>
                       <h3>Origin:</h3>
                       {' '}
-                      <Link to={`/location/${originId}`}>
+                      <Link to={`/locations/${originId}`}>
                         <span>{origin && origin.name}</span>
                       </Link>
                     </li>
                     <li>
                       <h3>Location:</h3>
                       {' '}
-                      <Link to={`/location/${locationId}`}>
+                      <Link to={`/locations/${locationId}`}>
                         <span>{location && location.name}</span>
                       </Link>
                     </li>
@@ -167,7 +167,7 @@ class CharactersDetails extends Component {
                   {episodes
                     && episodes.map(
                       (epi) => (
-                        (<Link to={`/episode/${epi}`}><li key={id + epi}>{epi}</li></Link>)
+                        (<Link to={`/episodes/${epi}`}><li key={id + epi}>{epi}</li></Link>)
                       ),
                     )}
                 </ul>

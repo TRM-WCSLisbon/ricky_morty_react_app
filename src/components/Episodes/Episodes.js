@@ -8,7 +8,6 @@ function Episodes() {
     <Switch>
       <Route exact path="/episodes" component={EpisodesList} />
       <Route path="/episodes/:id" component={EpisodesDetails} />
-      {/* <Redirect to="/episodes?page=1" /> */}
     </Switch>
   );
 }
