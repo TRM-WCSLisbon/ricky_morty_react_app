@@ -121,16 +121,6 @@ class EpisodesDetails extends React.Component {
                         {this.state.episode && this.state.episode.air_date}
                       </span>
                     </li>
-                    {/* <li>
-                      <h3>URL:</h3> <span>{this.state.episode && url}</span>
-                    </li> */}
-                    <li>
-                      <h3>Created Date:</h3>
-                      {' '}
-                      <span>
-                        {this.state.episode && this.state.episode.created}
-                      </span>
-                    </li>
                   </ul>
                 </div>
               </div>

@@ -285,68 +285,68 @@ export const Container = styled.div`
   margin-top: -50px;
 `;
 export const CardDetails = styled.div`
-  color: #fff;
-  background: #7d12ff;
-  margin: 10px;
-  border-radius: 10px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  cursor: pointer;
-  background-color: transparent;
-  height: 500px;
-  width: 700px;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  backdrop-filter: blur(5px);
-  border: 4px solid #ab20fd;
-  box-shadow: 0 10px 25px #ab20fd;
-  img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 7px;
-  }
-  // ul {
-  //   opacity: ${(props) => (props.displayEpisodes ? 1 : 0)};
-  //   top: 0;
-  //   right: 0;
-  //   height: 82%;
-  //   width: 98%;
-  //   position: absolute;
-  //   overflow-y: ${(props) => (props.displayEpisodes ? 'auto' : 'hidden')};
-  //   transition: opacity 150ms ease-in-out;
-  //   &::-webkit-scrollbar {
-  //     display: none;
-  //   }
-  // }
-  li {
-    font-size: 1em;
-    font-weight: bold;
-    border-radius: 20%;
-    margin: 5px;
-    margin-top: 10px;
-    padding: 5px;
-    text-align: center;
-    box-shadow: 0 1px 3px rgba(47, 53, 49, 0.12),
-      0 1px 2px rgba(47, 53, 49, 0.24);
-  }
-  .column-left {
-    float: left;
-    margin: -20px 20px 10px -20px;
-  }
-  .column-right {
-    float: right;
-    margin: -30px -20px 0 10px;
-  }
-  .Episodes {
-  }
+color: #fff;
+background: #7d12ff;
+margin: 10px;
+border-radius: 10px;
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+cursor: pointer;
+background-color: transparent;
+height: 350px;
+width: 700px;
+display: grid;
+justify-content: center;
+align-items: center;
+backdrop-filter: blur(5px);
+border: 4px solid #ab20fd;
+box-shadow: 0 10px 25px #ab20fd;
+
+img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 7px;
+  margin-left: 127px;
+}
+// ul {
+//   opacity: ${(props) => (props.displayEpisodes ? 1 : 0)};
+//   top: 0;
+//   right: 0;
+//   height: 82%;
+//   width: 98%;
+//   position: absolute;
+//   overflow-y: ${(props) => (props.displayEpisodes ? 'auto' : 'hidden')};
+//   transition: opacity 150ms ease-in-out;
+//   &::-webkit-scrollbar {
+//     display: none;
+//   }
+// }
+li {
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 20%;
+  margin: 5px;
+  margin-top: 10px;
+  padding: 5px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(47, 53, 49, 0.12),
+    0 1px 2px rgba(47, 53, 49, 0.24);
+}
+.column-left {
+  float: left;
+  margin: 0px 20px 10px -20px;
+}
+.column-right {
+  float: right;
+  margin: -15px -20px 0 10px;
+}
 `;
 export const CardGridDetails = styled.ul`
   display: ${({ loading }) => (loading ? 'block' : 'grid')};
   grid-template-columns: repeat(auto-fit, minmax(1fr));
   width: 750px;
-  height: 550px;
+  height: 400px;
   margin: 20px 50px;
   grid-gap: 25px;
   background-color: #333;

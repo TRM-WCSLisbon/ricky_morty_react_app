@@ -301,7 +301,7 @@ export const CardDetails = styled.div`
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   cursor: pointer;
   background-color: transparent;
-  height: 500px;
+  height: 350px;
   width: 700px;
   display: grid;
   justify-content: center;
@@ -342,18 +342,18 @@ export const CardDetails = styled.div`
   }
   .column-left {
     float: left;
-    margin: -20px 20px 10px -20px;
+    margin: 0px 20px 10px -20px;
   }
   .column-right {
     float: right;
-    margin: -30px -20px 0 10px;
+    margin: -15px -20px 0 10px;
   }
 `;
 export const CardGridDetails = styled.ul`
   display: ${({ loading }) => (loading ? 'block' : 'grid')};
   grid-template-columns: repeat(auto-fit, minmax(1fr));
   width: 750px;
-  height: 550px;
+  height: 400px;
   margin: 20px 50px;
   grid-gap: 25px;
   background-color: #333;
