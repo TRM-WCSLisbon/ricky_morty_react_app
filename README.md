@@ -1,5 +1,5 @@
 # API Request Demo Site
-This site is a demo for project 2 for WCS Lisbon Campus requesting data from an API, particularly from the Rick and Morty API.
+A Group project for WCS Lisbon built with React using Styled-Components and Rick and Morty API.
 
 ## Technologies and Skills used
 This project was built using:
@@ -18,6 +18,7 @@ This project was built using:
 * HTML
 * React
 * React Bootstrap
+* Styled-Components
 * Material-UI
 
 ## About me
@@ -26,7 +27,7 @@ We are students of Web Developer with knowledge of the front-end. Our goal is to
 For any inquiries, please feel free to contact us through ours Linkedins:
 
 **Luis Clara
-https://www.linkedin.com/in/lu%C3%ADs-clara-689822119
+https://www.linkedin.com/in/luis-clara/
 
 **Hugo Mendes
 https://github.com/HugoCravoMendes
